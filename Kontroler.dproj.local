@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.823,=D:\work\OKO\Kontroler\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.234,=D:\work\OKO\Kontroler\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.164,D:\work\OKO\Kontroler\Unit1.pas=D:\work\OKO\Kontroler\ModuleReports.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.436,D:\work\OKO\Kontroler\Unit1.dfm=D:\work\OKO\Kontroler\zvitnadovidka.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.436,D:\work\OKO\Kontroler\Unit1.pas=D:\work\OKO\Kontroler\zvitnadovidka.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.379,=D:\work\OKO\Kontroler\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.601,C:\Users\Николай\Documents\RAD Studio\Projects\Unit1.dfm=D:\work\OKO\Kontroler\mainunit.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.428,C:\Users\Николай\Documents\RAD Studio\Projects\Project1.dproj=D:\work\OKO\Kontroler\Kontroler.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.711,=C:\Users\Николай\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.967,=D:\work\OKO\Kontroler\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.601,C:\Users\Николай\Documents\RAD Studio\Projects\Unit1.pas=D:\work\OKO\Kontroler\mainunit.pas</Transaction>
+  </Transactions>
+</BorlandProject>
