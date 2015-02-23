@@ -18,7 +18,7 @@ implementation
 
  function TOpkassReports.ZvitnaDovidka(opkass_id:integer; oper_day:TDateTime):TADOQuery;
  begin
-   result:=db.GetOvList(opkass_id,oper_day);
+  // result:=db.GetOvList(opkass_id,oper_day);
  end;
 
  constructor TOpkassReports.create(_db:TMySqlOpkas);

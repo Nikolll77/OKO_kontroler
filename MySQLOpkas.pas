@@ -101,18 +101,24 @@ type
       function getLastOpkasID:integer;
 //      function ExportOperWithClient:integer;
       function getOpkasList():TADOQuery;
-      function getOVList(opkass_id:integer;oper_date:TDateTime):TADOQuery;
+      function getOVList(opkass_id:integer;oper_date:TDateTime; oper:integer =0; groupval:boolean = false):TADOQuery;
   end;
 
 implementation
 
 uses Math, Variants, Classes;
 
-function TmySqlOpkas.getOVList(opkass_id:integer;oper_date:TDateTime):TADOQuery;
+function TmySqlOpkas.getOVList(opkass_id:integer;oper_date:TDateTime; oper:integer =0; groupval:boolean = false):TADOQuery;
 var
   zapros:TADOQuery;
 begin
 //select * from OPER where opkas_id=100 and date(operdata)='2014-07-31'
+// select *, time(operdata) as op_time from OPER where opkas_id=100 and date(operdata)='2014-07-31'
+
+//select concat(CURRENCY.name,'(',CURRENCY.kod,')') as currency, time(operdata) as op_time from OPER
+//join CURRENCY on OPER.currency=CURRENCY.abr
+//where opkas_id=100 and date(operdata)='2014-07-31'
+
 
    try FreeAndNil(Zapros) except end;
    Zapros:=TADOQuery.Create(nil);
@@ -121,7 +127,23 @@ begin
        Connection:=MysqlConnection;
        SQL.Clear;
        Parameters.Clear;
-       SQL.add('select * from OPER where opkas_id=:opkassid and date(operdata)=:operdate');
+
+//       SQL.add('select *, time(operdata) as op_time ');
+       if groupval then
+           SQL.add('SELECT currency as val,oper,SUM(sum) as summ,sum(sumUAH) as summU')
+       else
+           SQL.add('select time(operdata) as op_time, concat(CURRENCY.name,"(",CURRENCY.kod,")") as currency,sum,rate,sumuah,kvit,storno,notate ');
+
+       SQL.add('from OPER join CURRENCY on OPER.currency=CURRENCY.abr ');
+       SQL.add('where (opkas_id=:opkassid) and (date(operdata)=:operdate) ');
+       SQL.add('and (kassa=2) ');
+       if oper<>0 then  SQL.add('and (oper='+IntToStr(oper)+') ');
+
+       if groupval then
+       begin
+           SQL.add('and (storno=0) group by currency, oper');
+       end;
+
        Parameters.ParamByName('opkassid').Value:=opkass_id;
        Parameters.ParamByName('operdate').Value:=FormatDateTime('yyyy-mm-dd',oper_date);
        open;

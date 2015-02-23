@@ -1,7 +1,7 @@
 object MainForm: TMainForm
   Left = 0
   Top = 0
-  Caption = 'MainForm'
+  Caption = #1052#1086#1076#1091#1083#1100' '#1082#1086#1085#1090#1088#1086#1083#1077#1088' ('#1090#1077#1089#1090')'
   ClientHeight = 510
   ClientWidth = 736
   Color = clBtnFace
@@ -14,6 +14,7 @@ object MainForm: TMainForm
   Menu = MainMenu1
   OldCreateOrder = True
   PrintScale = poNone
+  WindowState = wsMaximized
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
@@ -24,6 +25,7 @@ object MainForm: TMainForm
     Height = 19
     Panels = <
       item
+        Text = #1056#1086#1079#1098#1077#1076#1085#1072#1085#1086'!'
         Width = 100
       end
       item
@@ -32,8 +34,6 @@ object MainForm: TMainForm
       item
         Width = 50
       end>
-    ExplicitTop = 454
-    ExplicitWidth = 644
   end
   object MainMenu1: TMainMenu
     Left = 248

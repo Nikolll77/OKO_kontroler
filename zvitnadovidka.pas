@@ -12,16 +12,17 @@ type
     DateTimePicker1: TDateTimePicker;
     DBGrid1: TDBGrid;
     DataSource1: TDataSource;
-    Label1: TLabel;
     BitBtn1: TBitBtn;
-    DBGrid2: TDBGrid;
     DataSource2: TDataSource;
     frxReport1: TfrxReport;
     frxDBDataset1: TfrxDBDataset;
+    frxDBDataset2: TfrxDBDataset;
+    frxDBDataset3: TfrxDBDataset;
+    frxDBDataset4: TfrxDBDataset;
+    Label1: TLabel;
     procedure FormCreate(Sender: TObject);
-    procedure DBGrid1KeyUp(Sender: TObject; var Key: Word; Shift: TShiftState);
-    procedure DBGrid1CellClick(Column: TColumn);
     procedure BitBtn1Click(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     { Private declarations }
   public
@@ -41,12 +42,23 @@ procedure TFormZvitnaDovidka.BitBtn1Click(Sender: TObject);
 var
 kas:integer;
 op_date:TDateTime;
+datas:TDataSet;
 begin
 kas:=DBGrid1.Columns[0].Field.Value;
 op_date:=DateTimePicker1.DateTime;
-DataSource2.DataSet:=MainForm.Reports.zvitnadovidka(kas,op_date);
+
+
+DataSource2.DataSet:=mainform.DataBase.GetOvList(kas,op_date,1);//MainForm.Reports.zvitnadovidka(kas,op_date);
 frxDBDataset1.DataSet:=DataSource2.DataSet;
 
+DataSource2.DataSet:=mainform.DataBase.GetOvList(kas,op_date,1,true);
+frxDBDataset2.DataSet:=DataSource2.DataSet;
+
+DataSource2.DataSet:=mainform.DataBase.GetOvList(kas,op_date,2);
+frxDBDataset3.DataSet:=DataSource2.DataSet;
+
+DataSource2.DataSet:=mainform.DataBase.GetOvList(kas,op_date,2,true);
+frxDBDataset4.DataSet:=DataSource2.DataSet;
 
 frxReport1.Script.Variables['ddate']:=op_date;
 frxReport1.Script.Variables['punktname']:='';
@@ -55,23 +67,15 @@ frxReport1.Script.Variables['kasir']:='';
 frxReport1.Script.Variables['dirbuh']:='';
 frxReport1.Script.Variables['nam']:='';
 
-
-
-
 frxReport1.LoadFromFile(ExtractFilePath(Application.ExeName)+'templates\zvitna.fr3');
 frxReport1.ShowReport;
 
 end;
 
-procedure TFormZvitnaDovidka.DBGrid1CellClick(Column: TColumn);
+procedure TFormZvitnaDovidka.FormClose(Sender: TObject;
+  var Action: TCloseAction);
 begin
- Label1.Caption:=IntToStr(DBGrid1.Columns[0].Field.Value);
-end;
-
-procedure TFormZvitnaDovidka.DBGrid1KeyUp(Sender: TObject; var Key: Word;
-  Shift: TShiftState);
-begin
-Label1.Caption:=IntToStr(DBGrid1.Columns[0].Field.Value);
+Action := caFree;
 end;
 
 procedure TFormZvitnaDovidka.FormCreate(Sender: TObject);
