@@ -4,8 +4,8 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = #1047#1074#1110#1090#1085#1072' '#1076#1086#1074#1110#1076#1082#1072' ('#1086#1073#1084#1110#1085' '#1074#1072#1083#1102#1090')'
-  ClientHeight = 383
-  ClientWidth = 418
+  ClientHeight = 379
+  ClientWidth = 413
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -62,6 +62,11 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         Title.Caption = #1085#1072#1079#1074#1072' '#1082#1072#1089#1080
         Width = 327
         Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'adres'
+        Visible = True
       end>
   end
   object BitBtn1: TBitBtn
@@ -96,10 +101,6 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
     Left = 136
     Top = 104
   end
-  object DataSource2: TDataSource
-    Left = 296
-    Top = 64
-  end
   object frxReport1: TfrxReport
     Version = '4.13.2'
     DotMatrixReport = False
@@ -109,7 +110,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 41215.733751759300000000
-    ReportOptions.LastChange = 42058.991144687500000000
+    ReportOptions.LastChange = 42063.614077372690000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -133,6 +134,10 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
       item
         DataSet = frxDBDataset4
         DataSetName = 'frDB4'
+      end
+      item
+        DataSet = frxDBDataset5
+        DataSetName = 'frDB5'
       end>
     Variables = <>
     Style = <>
@@ -507,6 +512,8 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         Height = 16.075536200000000000
         Top = 215.433210000000000000
         Width = 718.110700000000000000
+        DataSet = frxDBDataset5
+        DataSetName = 'frDB5'
         RowCount = 0
         object frxDBDataset1kod: TfrxMemoView
           Left = 5.971657400000000000
@@ -524,7 +531,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDB1."kod"]')
+            '[frDB5."kodval"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -546,7 +553,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDB1."inkas"]')
+            '[frDB5."sumstart"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -568,7 +575,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDB1."otzk"]')
+            '[frDB5."otzk"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -590,7 +597,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDB1."otink"]')
+            '[frDB5."otink"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -612,7 +619,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDB1."sumprih"]')
+            '[frDB5."sumprih"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -634,7 +641,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDB1."sumvidat"]')
+            '[frDB5."sumvidat"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -656,7 +663,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDB1."kzk"]')
+            '[frDB5."kzk"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -678,7 +685,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDB1."kinkas"]')
+            '[frDB5."kink"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -700,7 +707,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frxDB1."forinkas"]')
+            '[frDB5."sumend"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1985,5 +1992,12 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
     BCDToCurrency = False
     Left = 368
     Top = 112
+  end
+  object frxDBDataset5: TfrxDBDataset
+    UserName = 'frDB5'
+    CloseDataSource = False
+    BCDToCurrency = False
+    Left = 232
+    Top = 160
   end
 end

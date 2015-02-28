@@ -93,6 +93,10 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="ModuleReports.pas"/>
+        <DCCReference Include="ProcessForm.pas">
+            <Form>ProcessFrm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

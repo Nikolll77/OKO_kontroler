@@ -29,6 +29,8 @@ type
     { Public declarations }
     DataBase:TMySqlOpkas;
     Reports:TOpkassReports;
+
+    function ConvertDate(d : tDate; t : tTime; time : boolean) : string;
   end;
 
 var
@@ -57,7 +59,7 @@ end;
 
 procedure TMainForm.menu_DB_disconnectClick(Sender: TObject);
 begin
-//Database.disconnect;
+Database.MysqlConnection.Connected:=false;
 
 end;
 
@@ -65,6 +67,28 @@ procedure TMainForm.menu_OV_zvitnaClick(Sender: TObject);
 begin
 Application.CreateForm(TFormZvitnaDovidka, FormZvitnaDovidka);
 FormZvitnaDovidka.show;
+end;
+
+function TMainForm.ConvertDate(d : tDate; t : tTime; time : boolean) : string;
+const
+   months : array[1..12] of string[20] = ('січня','лютого','березня','квітня','травня','червня','липня','серпня','вересня','жовтня','листопада','грудня');
+var
+   year, month, day     : word;
+   hour, min, sec, msec : word;
+   h, m                 : string;
+begin
+   DecodeDate(D,year,month,day);
+   if time = true then begin
+      DecodeTime(t, hour, min, sec, msec);
+      h := IntToStr(hour);
+      m := IntTostr(min);
+      if Length(h) = 1 then System.Insert('0', h, 1);
+      if Length(m) = 1 then Insert('0', m, 1);
+      ConvertDate := '"' + IntToStr(day) + '" ' + months[month] + ' ' + IntToStr(year) + ' р.  ' + h + ':' + m;
+   end else
+   begin
+      ConvertDate := '"' + IntToStr(day) + '" ' + months[month] + ' ' + IntToStr(year)+ ' р.';
+   end;
 end;
 
 end.

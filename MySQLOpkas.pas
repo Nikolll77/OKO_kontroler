@@ -101,14 +101,63 @@ type
       function getLastOpkasID:integer;
 //      function ExportOperWithClient:integer;
       function getOpkasList():TADOQuery;
-      function getOVList(opkass_id:integer;oper_date:TDateTime; oper:integer =0; groupval:boolean = false):TADOQuery;
+      function getOVReestr(opkass_id:integer;oper_date:TDateTime; oper:integer =0; groupval:boolean = false):TADOQuery;
+      function getOVList(opkass_id:integer;oper_date:TDateTime):TADOQuery;
+      function getCurrencyList:TADOQuery;
   end;
 
 implementation
 
 uses Math, Variants, Classes;
 
-function TmySqlOpkas.getOVList(opkass_id:integer;oper_date:TDateTime; oper:integer =0; groupval:boolean = false):TADOQuery;
+function TmySqlOpkas.getCurrencyList:TADOQuery;
+var
+  zapros:TADOQuery;
+begin
+
+//   try FreeAndNil(Zapros) except end;
+   Zapros:=TADOQuery.Create(nil);
+   with Zapros do
+   begin
+       Connection:=MysqlConnection;
+       SQL.Clear;
+       SQL.add('select * ');
+       SQL.add('from CURRENCY ');
+       SQL.add('order by id ');
+       open;
+   end;
+  result:=zapros;
+end;
+
+function TmySqlOpkas.getOVList(opkass_id:integer;oper_date:TDateTime):TADOQuery;
+var
+  zapros:TADOQuery;
+begin
+
+
+   try FreeAndNil(Zapros) except end;
+   Zapros:=TADOQuery.Create(nil);
+   with Zapros do
+   begin
+       Connection:=MysqlConnection;
+       SQL.Clear;
+       Parameters.Clear;
+
+       SQL.add('select * ');
+       SQL.add('from OPER ');
+       SQL.add('where (opkas_id=:opkassid) and (date(operdata)=:operdate) and (storno=false) ');
+       SQL.add('and (kassa=2) ');
+
+       Parameters.ParamByName('opkassid').Value:=opkass_id;
+       Parameters.ParamByName('operdate').Value:=FormatDateTime('yyyy-mm-dd',oper_date);
+       open;
+   end;
+  result:=zapros;
+end;
+
+
+
+function TmySqlOpkas.getOVReestr(opkass_id:integer;oper_date:TDateTime; oper:integer =0; groupval:boolean = false):TADOQuery;
 var
   zapros:TADOQuery;
 begin
@@ -120,14 +169,16 @@ begin
 //where opkas_id=100 and date(operdata)='2014-07-31'
 
 
-   try FreeAndNil(Zapros) except end;
+   //try FreeAndNil(Zapros) except end;
    Zapros:=TADOQuery.Create(nil);
+
    with Zapros do
    begin
        Connection:=MysqlConnection;
-       SQL.Clear;
-       Parameters.Clear;
 
+       SQL.BeginUpdate;
+//       SQL.Clear;
+//       Parameters.Clear;
 //       SQL.add('select *, time(operdata) as op_time ');
        if groupval then
            SQL.add('SELECT currency as val,oper,SUM(sum) as summ,sum(sumUAH) as summU')
@@ -143,6 +194,7 @@ begin
        begin
            SQL.add('and (storno=0) group by currency, oper');
        end;
+       SQL.EndUpdate;
 
        Parameters.ParamByName('opkassid').Value:=opkass_id;
        Parameters.ParamByName('operdate').Value:=FormatDateTime('yyyy-mm-dd',oper_date);

@@ -1,9 +1,9 @@
 object MainForm: TMainForm
-  Left = 0
-  Top = 0
+  Left = 206
+  Top = 126
   Caption = #1052#1086#1076#1091#1083#1100' '#1082#1086#1085#1090#1088#1086#1083#1077#1088' ('#1090#1077#1089#1090')'
-  ClientHeight = 510
-  ClientWidth = 736
+  ClientHeight = 472
+  ClientWidth = 653
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,8 +20,8 @@ object MainForm: TMainForm
   TextHeight = 13
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 491
-    Width = 736
+    Top = 453
+    Width = 653
     Height = 19
     Panels = <
       item
@@ -36,8 +36,8 @@ object MainForm: TMainForm
       end>
   end
   object MainMenu1: TMainMenu
-    Left = 248
-    Top = 272
+    Left = 448
+    Top = 8
     object menu_DB: TMenuItem
       Caption = #1041#1072#1079#1072' '#1076#1072#1085#1080#1093
       object menu_db_connect: TMenuItem
@@ -64,7 +64,7 @@ object MainForm: TMainForm
     end
   end
   object ADOConnection1: TADOConnection
-    Left = 200
-    Top = 160
+    Left = 400
+    Top = 8
   end
 end
