@@ -5,7 +5,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
   BorderStyle = bsSingle
   Caption = #1047#1074#1110#1090#1085#1072' '#1076#1086#1074#1110#1076#1082#1072' ('#1086#1073#1084#1110#1085' '#1074#1072#1083#1102#1090')'
   ClientHeight = 379
-  ClientWidth = 413
+  ClientWidth = 621
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -38,7 +38,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
   object DBGrid1: TDBGrid
     Left = 8
     Top = 27
-    Width = 402
+    Width = 605
     Height = 318
     DataSource = DataSource1
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
@@ -60,12 +60,14 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         Expanded = False
         FieldName = 'name'
         Title.Caption = #1085#1072#1079#1074#1072' '#1082#1072#1089#1080
-        Width = 327
+        Width = 287
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'adres'
+        Title.Caption = #1072#1076#1088#1077#1089#1072
+        Width = 236
         Visible = True
       end>
   end

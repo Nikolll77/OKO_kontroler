@@ -19,10 +19,13 @@ type
     N5: TMenuItem;
     StatusBar1: TStatusBar;
     ADOConnection1: TADOConnection;
+    Menu_OV_limitscheck: TMenuItem;
+    N1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure menu_db_connectClick(Sender: TObject);
     procedure menu_DB_disconnectClick(Sender: TObject);
     procedure menu_OV_zvitnaClick(Sender: TObject);
+    procedure Menu_OV_limitscheckClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,7 +43,7 @@ implementation
 
 {$R *.dfm}
 
-uses zvitnadovidka;
+uses zvitnadovidka, LimitsCheck;
 
 
 procedure TMainForm.FormCreate(Sender: TObject);
@@ -61,6 +64,11 @@ procedure TMainForm.menu_DB_disconnectClick(Sender: TObject);
 begin
 Database.MysqlConnection.Connected:=false;
 
+end;
+
+procedure TMainForm.Menu_OV_limitscheckClick(Sender: TObject);
+begin
+frmLimitsCheck.show;
 end;
 
 procedure TMainForm.menu_OV_zvitnaClick(Sender: TObject);

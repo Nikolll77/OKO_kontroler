@@ -91,7 +91,9 @@ type
       procedure OperToBufer(LocalOpers:TADOQuery;var buferOperRecord:TbuferOperRecord;OperKassa:integer;OnlineClient_id:integer;for_resinc:integer);
       function insertOperRecord(buferOperRecord:TbuferOperRecord):integer;
 
+      function getSumVidanoHrnByClients(date_from,date_to:TDatetime;type_oper:integer):TADOQuery;
       function getSumVidanoHrn(buferClientRec:TbuferClientRecord;date_from,date_to:TDatetime;type_oper:integer):real;
+
 
       function GetOpKassIdbyVolume(volume:string):integer;
       function CheckOnlineOpKassId(localOpkasId:integer):integer;      
@@ -251,7 +253,39 @@ begin
   result:=zapros;
 end;
 
-//не доделано
+
+function TmySqlOpkas.getSumVidanoHrnByClients(date_from,date_to:TDatetime;type_oper:integer):TADOQuery;
+var
+  zapros:TADOQuery;
+  OnlineClientId:integer;
+  tmpString:String;
+begin
+
+   case type_oper of
+   1: tmpString:=' and (kassa<>2) and (oper=1) '; //выдано клиенту
+   2: tmpString:=' and (kassa=2) and (oper=2) '; //валюта(еквивалент) купленая клиентом
+   else tmpString:=' oper=1 '; //по всем опрерация гривна в еквиваленте   ()
+   end;
+
+   Zapros:=TADOQuery.Create(nil);
+   Zapros.Connection:=MysqlConnection;
+   Zapros.SQL.Add('select clients_id,name,ser,num,count(clients_id) as koloper,count(distinct opkas_id) as kolkass,sum(sumUAH) as summa from OPER');
+   Zapros.SQL.Add('join CLIENTS on clients_id=CLIENTS.ID');
+   Zapros.SQL.Add('where (date(operdata)>="'+FormatDateTime('yyyy-mm-dd',date_from)+'") ');
+   Zapros.SQL.Add('and (date(operdata)<="'+FormatDateTime('yyyy-mm-dd',date_to)+'")');
+   Zapros.SQL.Add(tmpString);
+   Zapros.SQL.Add('group by clients_id');
+   Zapros.SQL.Add('order by name');
+
+   //ShowMessage(Zapros.SQL.Text);
+
+   zapros.Open;
+   result:=zapros;
+
+end;
+
+
+
 function TmySqlOpkas.getSumVidanoHrn(buferClientRec:TbuferClientRecord;date_from,date_to:TDatetime;type_oper:integer):real;
 var
   zapros:TADOQuery;

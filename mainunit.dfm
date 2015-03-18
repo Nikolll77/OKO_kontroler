@@ -62,6 +62,13 @@ object MainForm: TMainForm
         end
       end
     end
+    object N1: TMenuItem
+      Caption = #1047#1072#1087#1080#1090#1080
+      object Menu_OV_limitscheck: TMenuItem
+        Caption = #1057#1091#1084#1080' '#1087#1077#1088#1077#1082#1072#1079#1110#1074' '#1087#1086' '#1082#1083#1110#1077#1085#1090#1072#1084
+        OnClick = Menu_OV_limitscheckClick
+      end
+    end
   end
   object ADOConnection1: TADOConnection
     Left = 400
