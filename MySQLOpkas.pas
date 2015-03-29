@@ -106,11 +106,51 @@ type
       function getOVReestr(opkass_id:integer;oper_date:TDateTime; oper:integer =0; groupval:boolean = false):TADOQuery;
       function getOVList(opkass_id:integer;oper_date:TDateTime):TADOQuery;
       function getCurrencyList:TADOQuery;
+
+      function getKassirNameByDay(opkass_id:integer;oper_date:TDateTime):string;
   end;
 
 implementation
 
 uses Math, Variants, Classes;
+
+function TmySqlOpkas.getKassirNameByDay(opkass_id:integer;oper_date:TDateTime):string;
+var
+zapros:TADOQuery;
+p_operdate,p_opkassid:string;
+begin
+   try FreeAndNil(Zapros) except end;
+   Zapros:=TADOQuery.Create(nil);
+   with Zapros do
+   begin
+       Connection:=MysqlConnection;
+       SQL.Clear;
+       Parameters.Clear;
+
+       p_opkassid:=IntToStr(opkass_id);
+       p_operdate:='"'+FormatDateTime('yyyy-mm-dd',oper_date)+'"';
+
+        SQL.add('select o.kasirID, (select name from KASSIRS k where k.id_old=o.kasirID and k.opkas_id='+p_opkassid+') as name from OPER o');
+        SQL.add('where o.opkas_id='+p_opkassid+' and date(o.operdata)='+p_operdate+' and o.kasirID>0');
+        SQL.add('order by o.kasirID desc');
+        SQL.add('limit 1');
+
+{        SQL.add('select o.kasirID, (select name from KASSIRS k where k.id_old=o.kasirID and k.opkas_id=:p_opkassid) as name from OPER o');
+        SQL.add('where o.opkas_id=:p_opkassid and date(o.operdata)=:p_operdate and o.kasirID>0');
+        SQL.add('order by o.kasirID desc');
+        SQL.add('limit 1');
+
+       Parameters.ParamByName('p_opkassid').Value:=opkass_id;
+       Parameters.ParamByName('p_operdate').Value:=FormatDateTime('yyyy-mm-dd',oper_date);}
+       open;
+
+//       ShowMessage(sql.Text);
+   end;
+  if zapros['name']<>null then result:=zapros['name']
+  else  result:='';
+end;
+
+
 
 function TmySqlOpkas.getCurrencyList:TADOQuery;
 var
@@ -136,7 +176,6 @@ var
   zapros:TADOQuery;
 begin
 
-
    try FreeAndNil(Zapros) except end;
    Zapros:=TADOQuery.Create(nil);
    with Zapros do
@@ -155,6 +194,7 @@ begin
        open;
    end;
   result:=zapros;
+
 end;
 
 

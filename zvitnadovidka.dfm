@@ -112,7 +112,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 41215.733751759300000000
-    ReportOptions.LastChange = 42063.614077372690000000
+    ReportOptions.LastChange = 42063.614077372700000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -1800,7 +1800,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo97: TfrxMemoView
           Left = 0.001000000000000000
-          Top = 84.136919599999700000
+          Top = 84.136919599999710000
           Width = 54.706000000000000000
           Height = 11.295000000000000000
           ShowHint = False

@@ -43,7 +43,6 @@ procedure TFormZvitnaDovidka.BitBtn1Click(Sender: TObject);
 var
 kas:integer;
 op_date:TDateTime;
-datas:TDataSet;
 begin
 kas:=DBGrid1.Columns[0].Field.Value;
 op_date:=DateTimePicker1.DateTime;
@@ -62,11 +61,13 @@ ProcessFrm.Memo1.lines.add('(5/5) Розрахунок звітної довідки ...');
 frxDBDataset5.DataSet:=GetZvitnaData(kas,op_date);
 ProcessFrm.Close;
 
+
+
 frxReport1.Script.Variables['ddate']:=' cтаном на '+MainForm.ConvertDate(op_date,now,false);
 frxReport1.Script.Variables['punktname']:=DBGrid1.Columns[1].Field.Value;;
 frxReport1.Script.Variables['nam']:='';
 frxReport1.Script.Variables['adres']:=DBGrid1.Columns[2].Field.Value;
-frxReport1.Script.Variables['kasir']:='';
+frxReport1.Script.Variables['kasir']:=mainform.DataBase.getKassirNameByDay(kas,op_date);
 frxReport1.Script.Variables['dirbuh']:='Бухгалтер';
 
 
