@@ -6,7 +6,11 @@ uses
   zvitnadovidka in 'zvitnadovidka.pas' {FormZvitnaDovidka},
   ModuleReports in 'ModuleReports.pas',
   ProcessForm in 'ProcessForm.pas' {ProcessFrm},
-  LimitsCheck in 'LimitsCheck.pas' {frmLimitsCheck};
+  LimitsCheck in 'LimitsCheck.pas' {frmLimitsCheck},
+  zapClientCountOper in 'zapClientCountOper.pas' {KlientsCountOper},
+  GetOpkasIdForm in 'GetOpkasIdForm.pas' {frmgetOpkasId},
+  OpersByClientForm in 'OpersByClientForm.pas' {frmOpersByClient},
+  GetClientIdForm in 'GetClientIdForm.pas' {frmGetClentId};
 
 {$R *.res}
 

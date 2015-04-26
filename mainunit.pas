@@ -8,6 +8,8 @@ uses
   Data.DB, Data.Win.ADODB;
 
 type
+  TMode = (modeOV,modeALL);
+
   TMainForm = class(TForm)
     MainMenu1: TMainMenu;
     menu_reports: TMenuItem;
@@ -21,11 +23,22 @@ type
     ADOConnection1: TADOConnection;
     Menu_OV_limitscheck: TMenuItem;
     N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    N6: TMenuItem;
+    N7: TMenuItem;
+    N8: TMenuItem;
+    N9: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure menu_db_connectClick(Sender: TObject);
     procedure menu_DB_disconnectClick(Sender: TObject);
     procedure menu_OV_zvitnaClick(Sender: TObject);
     procedure Menu_OV_limitscheckClick(Sender: TObject);
+    procedure N4Click(Sender: TObject);
+    procedure N6Click(Sender: TObject);
+    procedure N8Click(Sender: TObject);
+    procedure N7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,7 +56,7 @@ implementation
 
 {$R *.dfm}
 
-uses zvitnadovidka, LimitsCheck;
+uses zvitnadovidka, LimitsCheck, zapClientCountOper, OpersByClientForm;
 
 
 procedure TMainForm.FormCreate(Sender: TObject);
@@ -51,6 +64,9 @@ begin
 DataBase:=TMySqlOpkas.create;
 reports:=TOpkassReports.create(DataBase);
 menu_db_connect.Click;
+
+  Application.HintPause:=10;
+  Application.HintColor:=clLime;
 end;
 
 procedure TMainForm.menu_db_connectClick(Sender: TObject);
@@ -75,6 +91,34 @@ procedure TMainForm.menu_OV_zvitnaClick(Sender: TObject);
 begin
 Application.CreateForm(TFormZvitnaDovidka, FormZvitnaDovidka);
 FormZvitnaDovidka.show;
+end;
+
+procedure TMainForm.N4Click(Sender: TObject);
+begin
+Application.CreateForm(TKlientsCountOper,KlientsCountOper);
+KlientsCountOper.mode:=modeALL;
+KlientsCountOper.show;
+end;
+
+procedure TMainForm.N6Click(Sender: TObject);
+begin
+  Application.CreateForm(TKlientsCountOper,KlientsCountOper);
+  KlientsCountOper.mode:=modeOV;
+  KlientsCountOper.show;
+end;
+
+procedure TMainForm.N7Click(Sender: TObject);
+begin
+  Application.CreateForm(TfrmOpersByClient,frmOpersByClient);
+  frmOpersByClient.mode:=modeOV;
+  frmOpersByClient.show;
+end;
+
+procedure TMainForm.N8Click(Sender: TObject);
+begin
+  Application.CreateForm(TfrmOpersByClient,frmOpersByClient);
+  frmOpersByClient.mode:=modeALL;
+  frmOpersByClient.show;
 end;
 
 function TMainForm.ConvertDate(d : tDate; t : tTime; time : boolean) : string;

@@ -88,15 +88,23 @@ type
       function GetClientId_Sinchro(buferClientRecord: TbuferClientRecord):integer;
       function insertClientRecord(buferClientRecord:TbuferClientRecord):integer;
 
+      function getClientsList(fltr:string):TADOQuery;
+
+      function getClientsWithCountOpers(date_from,date_to:TDatetime;perevod_system:integer;opkas_id:integer):TADOQuery;
+      function getUncnownOVClientsWithCountOpers(date_from,date_to:TDatetime;opkas_id:integer):TADOQuery;
+
+
       procedure OperToBufer(LocalOpers:TADOQuery;var buferOperRecord:TbuferOperRecord;OperKassa:integer;OnlineClient_id:integer;for_resinc:integer);
       function insertOperRecord(buferOperRecord:TbuferOperRecord):integer;
+      function getOpersByKlient(date_from,date_to:TDatetime;klient_id:integer):TADOQuery;
+      function getOpersByDopinfoOV(date_from,date_to:TDatetime;fltr:string):TADOQuery;
 
       function getSumVidanoHrnByClients(date_from,date_to:TDatetime;type_oper:integer):TADOQuery;
       function getSumVidanoHrn(buferClientRec:TbuferClientRecord;date_from,date_to:TDatetime;type_oper:integer):real;
 
 
       function GetOpKassIdbyVolume(volume:string):integer;
-      function CheckOnlineOpKassId(localOpkasId:integer):integer;      
+      function CheckOnlineOpKassId(localOpkasId:integer):integer;
       function insertOpKass(opkassRecord:TOpKassRecord):integer;
       function getSinchronizedOper(Opkas_ID:integer;DateFrom:TdateTime):TADOQuery;
       function DeleteOpersForResinc(Opkas_ID:integer):integer;
@@ -114,12 +122,172 @@ implementation
 
 uses Math, Variants, Classes;
 
+function TmySqlOpkas.getOpersByDopinfoOV(date_from,date_to:TDatetime;fltr:string):TADOQuery;
+var
+zapros:TADOQuery;
+p_date1,p_date2:string;
+begin
+  p_date1:='"'+FormatDateTime('yyyy-mm-dd',date_from)+'"';
+  p_date2:='"'+FormatDateTime('yyyy-mm-dd',date_to)+'"';
+
+Zapros:=TADOQuery.Create(nil);
+
+with zapros do
+begin
+    Connection:=MysqlConnection;
+    SQL.Clear;
+
+
+    SQL.Add('select * from OPER ');
+    SQL.Add('where date(operdata)>='+p_date1+' and date(operdata)<='+p_date2+' and kassa=2 and (oper=1 or oper=2) ');
+    SQL.Add('and dopinfo LIKE "'+fltr+'" ');
+    SQL.Add('order by operdata');
+
+    open;
+end;
+
+
+Result:=zapros;
+end;
+
+function TmySqlOpkas.getOpersByKlient(date_from,date_to:TDatetime;klient_id:integer):TADOQuery;
+var
+zapros:TADOQuery;
+p_klient_id:string;
+p_date1,p_date2:string;
+begin
+  p_date1:='"'+FormatDateTime('yyyy-mm-dd',date_from)+'"';
+  p_date2:='"'+FormatDateTime('yyyy-mm-dd',date_to)+'"';
+  p_klient_id:=IntToStr(klient_id);
+
+Zapros:=TADOQuery.Create(nil);
+
+with zapros do
+begin
+    Connection:=MysqlConnection;
+    SQL.Clear;
+
+
+    SQL.Add('select * from OPER ');
+    SQL.Add('where date(operdata)>='+p_date1+' and date(operdata)<='+p_date2+' and clients_id='+p_klient_id+' and (oper=1 or oper=2) ');
+    SQL.Add('order by operdata');
+
+    open;
+end;
+
+
+Result:=zapros;
+end;
+
+
+
+function TmySqlOpkas.getClientsList(fltr:string):TADOQuery;
+//filter can use '% ... %' in LIKE construction
+var
+zapros:TADOQuery;
+begin
+
+//try FreeAndNil(Zapros) except end;
+Zapros:=TADOQuery.Create(nil);
+
+with zapros do
+begin
+    Connection:=MysqlConnection;
+    SQL.Clear;
+    SQL.Add('select id,name,Concat(dtype," ",ser," ",num) as dok, info,adres,country, ');
+    SQL.Add('if(isresident=0,"Не резидент","Резидент") as resident ');
+    SQL.Add('from CLIENTS ');
+    SQL.Add('where (name LIKE "'+fltr+'") or (Concat(ser," ",num) LIKE "'+fltr+'") or (id LIKE "'+fltr+'") ');
+    open;
+end;
+
+
+Result:=zapros;
+end;
+
+
+function TmySqlOpkas.getUncnownOVClientsWithCountOpers(date_from,date_to:TDatetime;opkas_id:integer):TADOQuery;
+var
+zapros:TADOQuery;
+p_opkassid:string;
+p_date1,p_date2:string;
+begin
+  p_date1:='"'+FormatDateTime('yyyy-mm-dd',date_from)+'"';
+  p_date2:='"'+FormatDateTime('yyyy-mm-dd',date_to)+'"';
+  p_opkassid:=IntToStr(opkas_id);
+
+//try FreeAndNil(Zapros) except end;
+Zapros:=TADOQuery.Create(nil);
+
+with zapros do
+begin
+    Connection:=MysqlConnection;
+    SQL.Clear;
+
+
+    SQL.Add('select clients_id as id,Upper(dopinfo) as name,count(Upper(dopinfo)) as koloper from OPER ');
+    SQL.Add('where date(operdata)>='+p_date1+' and date(operdata)<='+p_date2+' and clients_id<0 and kassa=2 and (oper=1 or oper=2) ');
+
+    if opkas_id>0 then
+      SQL.Add('and opkas_id='+p_opkassid+' ');
+
+    SQL.Add('group by Upper(dopinfo)');
+    SQL.Add('order by koloper desc');
+
+    open;
+end;
+
+
+Result:=zapros;
+end;
+
+function TmySqlOpkas.getClientsWithCountOpers(date_from,date_to:TDatetime;perevod_system:integer;opkas_id:integer):TADOQuery;
+var
+zapros:TADOQuery;
+p_system,p_opkassid:string;
+p_date1,p_date2:string;
+begin
+p_date1:='"'+FormatDateTime('yyyy-mm-dd',date_from)+'"';
+p_date2:='"'+FormatDateTime('yyyy-mm-dd',date_to)+'"';
+p_system:=IntToStr(perevod_system);
+p_opkassid:=IntToStr(opkas_id);
+
+//try FreeAndNil(Zapros) except end;
+Zapros:=TADOQuery.Create(nil);
+
+with zapros do
+begin
+    Connection:=MysqlConnection;
+    SQL.Clear;
+    SQL.Add('select CLIENTS.id,CLIENTS.NAME, count(OPER.clients_id) koloper from OPER');
+    SQL.Add('left join CLIENTS on CLIENTS.ID = OPER.clients_id');
+    SQL.Add('where date(operdata)>='+p_date1+' and date(operdata)<='+p_date2+' and (oper=1 or oper=2) ');
+
+    if perevod_system>0 then
+    SQL.Add('and kassa='+p_system+' ');
+
+    if opkas_id>0 then
+    SQL.Add('and opkas_id='+p_opkassid+' ');
+
+
+    SQL.Add('group by OPER.clients_id');
+    SQL.Add('order by koloper desc');
+
+
+
+    open;
+end;
+
+
+Result:=zapros;
+end;
+
 function TmySqlOpkas.getKassirNameByDay(opkass_id:integer;oper_date:TDateTime):string;
 var
 zapros:TADOQuery;
 p_operdate,p_opkassid:string;
 begin
-   try FreeAndNil(Zapros) except end;
+  // try FreeAndNil(Zapros) except end;
    Zapros:=TADOQuery.Create(nil);
    with Zapros do
    begin
@@ -176,7 +344,7 @@ var
   zapros:TADOQuery;
 begin
 
-   try FreeAndNil(Zapros) except end;
+   //try FreeAndNil(Zapros) except end;
    Zapros:=TADOQuery.Create(nil);
    with Zapros do
    begin
