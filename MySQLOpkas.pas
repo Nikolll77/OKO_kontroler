@@ -138,7 +138,7 @@ begin
     SQL.Clear;
 
 
-    SQL.Add('select * from OPER ');
+    SQL.Add('select *,(select name from KASSIRS k where k.id_old=OPER.kasirID and OPER.opkas_id=k.opkas_id) as kasirname from OPER ');
     SQL.Add('where date(operdata)>='+p_date1+' and date(operdata)<='+p_date2+' and kassa=2 and (oper=1 or oper=2) ');
     SQL.Add('and dopinfo LIKE "'+fltr+'" ');
     SQL.Add('order by operdata');
@@ -167,8 +167,7 @@ begin
     Connection:=MysqlConnection;
     SQL.Clear;
 
-
-    SQL.Add('select * from OPER ');
+    SQL.Add('select *,(select name from KASSIRS k where k.id_old=OPER.kasirID and OPER.opkas_id=k.opkas_id) as kasirname from OPER ');
     SQL.Add('where date(operdata)>='+p_date1+' and date(operdata)<='+p_date2+' and clients_id='+p_klient_id+' and (oper=1 or oper=2) ');
     SQL.Add('order by operdata');
 

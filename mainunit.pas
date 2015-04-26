@@ -47,6 +47,7 @@ type
     Reports:TOpkassReports;
 
     function ConvertDate(d : tDate; t : tTime; time : boolean) : string;
+
   end;
 
 var
@@ -57,7 +58,6 @@ implementation
 {$R *.dfm}
 
 uses zvitnadovidka, LimitsCheck, zapClientCountOper, OpersByClientForm;
-
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin

@@ -25,12 +25,14 @@ object KlientsCountOper: TKlientsCountOper
     Align = alClient
     DataSource = DataSource1
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    PopupMenu = PopupMenu1
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnDblClick = menuOpersByKlientClick
     Columns = <
       item
         Expanded = False
@@ -174,5 +176,13 @@ object KlientsCountOper: TKlientsCountOper
   object DataSource1: TDataSource
     Left = 479
     Top = 346
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 296
+    Top = 280
+    object menuOpersByKlient: TMenuItem
+      Caption = #1054#1087#1077#1088#1072#1094#1110#1111' '#1087#1086' '#1082#1083#1110#1077#1085#1090#1091
+      OnClick = menuOpersByKlientClick
+    end
   end
 end

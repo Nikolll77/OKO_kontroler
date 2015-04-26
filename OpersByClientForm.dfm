@@ -25,6 +25,8 @@ object frmOpersByClient: TfrmOpersByClient
     Align = alClient
     DataSource = DataSource1
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    ParentShowHint = False
+    ShowHint = True
     TabOrder = 0
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -50,18 +52,26 @@ object frmOpersByClient: TfrmOpersByClient
         Expanded = False
         FieldName = 'dopinfo'
         Title.Caption = 'dopinfo/'#1055#1030#1041
-        Width = 131
+        Width = 142
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'opkas_id'
         Title.Caption = #1086#1087#1077#1088#1082#1072#1089#1072
+        Width = 52
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'kasirID'
+        FieldName = 'kasirid'
+        Title.Caption = #1082#1072'cID'
+        Width = 32
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'kasirname'
         Title.Caption = #1082#1072#1089#1080#1088
         Width = 47
         Visible = True
@@ -70,14 +80,14 @@ object frmOpersByClient: TfrmOpersByClient
         Expanded = False
         FieldName = 'operdata'
         Title.Caption = #1076#1072#1090#1072
-        Width = 73
+        Width = 70
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'kassa'
         Title.Caption = #1089#1080#1089#1090#1077#1084#1072
-        Width = 70
+        Width = 43
         Visible = True
       end
       item
@@ -90,7 +100,7 @@ object frmOpersByClient: TfrmOpersByClient
       item
         Expanded = False
         FieldName = 'sum'
-        Title.Caption = #1091#1084#1072
+        Title.Caption = #1089#1091#1084#1072
         Width = 53
         Visible = True
       end

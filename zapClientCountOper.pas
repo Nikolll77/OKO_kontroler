@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Buttons,
-  Vcl.Grids, Vcl.DBGrids, Vcl.ComCtrls, mainunit;
+  Vcl.Grids, Vcl.DBGrids, Vcl.ComCtrls, mainunit, Vcl.Menus;
 
 type
 
@@ -24,6 +24,8 @@ type
     ComboBox1: TComboBox;
     BitBtn1: TBitBtn;
     Button1: TButton;
+    PopupMenu1: TPopupMenu;
+    menuOpersByKlient: TMenuItem;
 
 
     procedure BitBtn1Click(Sender: TObject);
@@ -31,6 +33,7 @@ type
     procedure Edit1Change(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure menuOpersByKlientClick(Sender: TObject);
 
 
   private
@@ -48,6 +51,8 @@ type
     property mode: TMode read getMode write setmode;
     property opkas_id : integer read getOpkasId write setOpkasId ;
     procedure FillItemsWithData(items:Tstrings);
+    procedure ShowOpersByClientID(client_id:integer);
+    procedure ShowOpersByDopinfoOV(dopinfo:string);
   end;
 
 var
@@ -57,7 +62,30 @@ implementation
 
 {$R *.dfm}
 
-uses GetOpkasIdForm;
+uses GetOpkasIdForm, OpersByClientForm;
+
+procedure TKlientsCountOper.ShowOpersByClientID(client_id:integer);
+begin
+  Application.CreateForm(TfrmOpersByClient,frmOpersByClient);
+  frmOpersByClient.mode:=modeALL;
+  frmOpersByClient.DateTimePicker1.Date:=DateTimePicker1.Date;
+  frmOpersByClient.DateTimePicker2.Date:=DateTimePicker2.Date;
+  frmOpersByClient.klient_id:=client_id;
+  frmOpersByClient.BitBtn1.Click;
+  frmOpersByClient.Show;
+end;
+
+procedure TKlientsCountOper.ShowOpersByDopinfoOV(dopinfo:string);
+begin
+  Application.CreateForm(TfrmOpersByClient,frmOpersByClient);
+  frmOpersByClient.mode:=modeOV;
+  frmOpersByClient.DateTimePicker1.Date:=DateTimePicker1.Date;
+  frmOpersByClient.DateTimePicker2.Date:=DateTimePicker2.Date;
+  frmOpersByClient.Edit1.Text:=dopinfo;
+  frmOpersByClient.CheckBox1.Checked:=true;
+  frmOpersByClient.BitBtn1.Click;
+  frmOpersByClient.Show;
+end;
 
 function TKlientsCountOper.getMode:TMode;
 begin
@@ -90,6 +118,19 @@ end;
 function TKlientsCountOper.getOpkasId:integer;
 begin
 result:=_opkas_id;
+end;
+
+procedure TKlientsCountOper.menuOpersByKlientClick(Sender: TObject);
+begin
+
+
+case mode of
+  modeOV: ShowOpersByDopinfoOV(DBGrid1.columns[1].field.value);
+  modeALL: ShowOpersByClientID(DBGrid1.columns[0].field.value);
+end;
+
+
+
 end;
 
 procedure TKlientsCountOper.setOpkasId(value:integer);
