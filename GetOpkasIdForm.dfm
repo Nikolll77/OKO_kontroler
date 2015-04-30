@@ -12,10 +12,9 @@ object frmgetOpkasId: TfrmgetOpkasId
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  FormStyle = fsMDIChild
+  FormStyle = fsStayOnTop
   OldCreateOrder = False
   Position = poOwnerFormCenter
-  Visible = True
   OnClose = FormClose
   OnCreate = FormCreate
   PixelsPerInch = 96
