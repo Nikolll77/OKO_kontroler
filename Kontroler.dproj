@@ -88,8 +88,8 @@
             <Form>MainForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="zvitnadovidka.pas">
-            <Form>FormZvitnaDovidka</Form>
+        <DCCReference Include="zvitnaOstatok.pas">
+            <Form>frmZvitnaOstatok</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="ModuleReports.pas"/>
@@ -115,6 +115,10 @@
         </DCCReference>
         <DCCReference Include="GetClientIdForm.pas">
             <Form>frmGetClentId</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="zvitnadovidka.pas">
+            <Form>FormZvitnaDovidka</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

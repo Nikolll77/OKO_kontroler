@@ -111,8 +111,10 @@ type
       function getLastOpkasID:integer;
 //      function ExportOperWithClient:integer;
       function getOpkasList():TADOQuery;
+      function getOVOpkasList():TADOQuery;
       function getOVReestr(opkass_id:integer;oper_date:TDateTime; oper:integer =0; groupval:boolean = false):TADOQuery;
       function getOVList(opkass_id:integer;oper_date:TDateTime):TADOQuery;
+      function getOVOstatki(opkass_id:integer;oper_date:TDateTime):TADOQuery;
       function getCurrencyList:TADOQuery;
 
       function getKassirNameByDay(opkass_id:integer;oper_date:TDateTime):string;
@@ -338,6 +340,29 @@ begin
   result:=zapros;
 end;
 
+
+function TmySqlOpkas.getOVOstatki(opkass_id:integer;oper_date:TDateTime):TADOQuery;
+var
+  zapros:TADOQuery;
+begin
+
+   //try FreeAndNil(Zapros) except end;
+   Zapros:=TADOQuery.Create(nil);
+   with Zapros do
+   begin
+       Connection:=MysqlConnection;
+       SQL.Clear;
+       Parameters.Clear;
+
+       SQL.add('CALL ov_ostatki(:opkassid, :operdate)');
+       Parameters.ParamByName('opkassid').Value:=opkass_id;
+       Parameters.ParamByName('operdate').Value:=FormatDateTime('yyyy-mm-dd hh.mm.ss',oper_date);
+       open;
+   end;
+  result:=zapros;
+
+end;
+
 function TmySqlOpkas.getOVList(opkass_id:integer;oper_date:TDateTime):TADOQuery;
 var
   zapros:TADOQuery;
@@ -423,6 +448,22 @@ begin
    begin
        Connection:=MysqlConnection;
        SQL.add('select * from OPKASSI');
+       open;
+   end;
+  result:=zapros;
+end;
+
+function TmySqlOpkas.getOVOpkasList():TADOQuery;
+var
+  zapros:TADOQuery;
+begin
+//select * from OPER where operdata>'2014.07.31'
+
+   Zapros:=TADOQuery.Create(nil);
+   with Zapros do
+   begin
+       Connection:=MysqlConnection;
+       SQL.add('select o.* from OPKASSI o join OPKAS_OV v on o.id=v.opkas_id');
        open;
    end;
   result:=zapros;

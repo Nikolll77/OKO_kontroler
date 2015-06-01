@@ -247,6 +247,7 @@ end;
 procedure TFormZvitnaDovidka.FormCreate(Sender: TObject);
 begin
 DataSource1.DataSet:=MainForm.DataBase.getOpkasList;
+DateTimePicker1.Date:=Date;
 {DBGrid1.Columns[0].FieldName:='id';
 DBGrid1.Columns[0].Title.Caption:='номер';
 DBGrid1.Columns[1].FieldName:='name';

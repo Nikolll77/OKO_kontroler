@@ -30,6 +30,7 @@ type
     N7: TMenuItem;
     N8: TMenuItem;
     N9: TMenuItem;
+    N10: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure menu_db_connectClick(Sender: TObject);
     procedure menu_DB_disconnectClick(Sender: TObject);
@@ -39,6 +40,7 @@ type
     procedure N6Click(Sender: TObject);
     procedure N8Click(Sender: TObject);
     procedure N7Click(Sender: TObject);
+    procedure N10Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -57,7 +59,8 @@ implementation
 
 {$R *.dfm}
 
-uses zvitnadovidka, LimitsCheck, zapClientCountOper, OpersByClientForm;
+uses zvitnadovidka, LimitsCheck, zapClientCountOper, OpersByClientForm,
+  zvitnaOstatok;
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
@@ -91,6 +94,12 @@ procedure TMainForm.menu_OV_zvitnaClick(Sender: TObject);
 begin
 Application.CreateForm(TFormZvitnaDovidka, FormZvitnaDovidka);
 FormZvitnaDovidka.show;
+end;
+
+procedure TMainForm.N10Click(Sender: TObject);
+begin
+Application.CreateForm(TfrmZvitnaOstatok, FrmZvitnaOstatok);
+frmZvitnaOstatok.show;
 end;
 
 procedure TMainForm.N4Click(Sender: TObject);

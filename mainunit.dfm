@@ -60,6 +60,10 @@ object MainForm: TMainForm
           Caption = #1047#1074#1110#1090#1085#1072' '#1076#1086#1074#1110#1076#1082#1072
           OnClick = menu_OV_zvitnaClick
         end
+        object N10: TMenuItem
+          Caption = #1054#1089#1090#1072#1090#1086#1082' '#1074' '#1082#1072#1089#1110
+          OnClick = N10Click
+        end
       end
     end
     object N1: TMenuItem
