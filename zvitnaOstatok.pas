@@ -50,19 +50,23 @@ DataSource1.DataSet.First;
 ProcessFrm.Memo1.Clear;
 ProcessFrm.Show;
 
+frxReport1.LoadFromFile(ExtractFilePath(Application.ExeName)+'templates\ostatokOvtitle.fr3');
+frxReport1.Script.Variables['ddate']:=' cтаном на '+MainForm.ConvertDate(op_date,op_date,true);
+frxReport1.PrepareReport(true);
+
   while not DataSource1.DataSet.eof do
   begin
     if DBGrid1.SelectedRows.CurrentRowSelected then
     begin
       kas:=DBGrid1.Columns[0].Field.Value;
       ProcessFrm.Memo1.lines.add('Каса ('+IntToStr(kas)+') Виконується запит до бази даних ...');
-      frxReport1.Script.Variables['ddate']:=' cтаном на '+MainForm.ConvertDate(op_date,op_date,true);
+
       frxReport1.Script.Variables['punktname']:=DBGrid1.Columns[1].Field.Value;;
       frxReport1.Script.Variables['adres']:=DBGrid1.Columns[2].Field.Value;
       frxDBDataset1.DataSet:=mainform.DataBase.getOVOstatki(kas,op_date);
       frxReport1.LoadFromFile(ExtractFilePath(Application.ExeName)+'templates\ostatokOv.fr3');
 
-      if first_time_flag then begin first_time_flag:=false;  frxReport1.PrepareReport(true) end else
+//      if first_time_flag then begin first_time_flag:=false;  frxReport1.PrepareReport(true) end else
           frxReport1.PrepareReport(false);
     end;
     DataSource1.DataSet.Next;
