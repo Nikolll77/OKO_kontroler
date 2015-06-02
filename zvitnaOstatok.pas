@@ -12,18 +12,16 @@ type
     DateTimePicker1: TDateTimePicker;
     DBGrid1: TDBGrid;
     DataSource1: TDataSource;
-    BitBtn1: TBitBtn;
     frxReport1: TfrxReport;
     frxDBDataset1: TfrxDBDataset;
-    frxDBDataset2: TfrxDBDataset;
-    frxDBDataset3: TfrxDBDataset;
-    frxDBDataset4: TfrxDBDataset;
     Label1: TLabel;
-    frxDBDataset5: TfrxDBDataset;
     DateTimePicker2: TDateTimePicker;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
     procedure FormCreate(Sender: TObject);
-    procedure BitBtn1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,33 +37,51 @@ implementation
 
 uses mainunit, ModuleReports,ProcessForm;
 
-procedure TfrmZvitnaOstatok.BitBtn1Click(Sender: TObject);
+procedure TfrmZvitnaOstatok.BitBtn2Click(Sender: TObject);
 var
 kas:integer;
 op_date:TDateTime;
+first_time_flag:boolean;
 begin
-kas:=DBGrid1.Columns[0].Field.Value;
+first_time_flag:=true;
+
 op_date:=int(DateTimePicker1.Date)+frac(DateTimePicker2.Time);
+DataSource1.DataSet.First;
 ProcessFrm.Memo1.Clear;
 ProcessFrm.Show;
-ProcessFrm.Memo1.lines.add('Виконується запит до бази даних ...');
-frxDBDataset1.DataSet:=mainform.DataBase.getOVOstatki(kas,op_date);
+
+  while not DataSource1.DataSet.eof do
+  begin
+    if DBGrid1.SelectedRows.CurrentRowSelected then
+    begin
+      kas:=DBGrid1.Columns[0].Field.Value;
+      ProcessFrm.Memo1.lines.add('Каса ('+IntToStr(kas)+') Виконується запит до бази даних ...');
+      frxReport1.Script.Variables['ddate']:=' cтаном на '+MainForm.ConvertDate(op_date,op_date,true);
+      frxReport1.Script.Variables['punktname']:=DBGrid1.Columns[1].Field.Value;;
+      frxReport1.Script.Variables['adres']:=DBGrid1.Columns[2].Field.Value;
+      frxDBDataset1.DataSet:=mainform.DataBase.getOVOstatki(kas,op_date);
+      frxReport1.LoadFromFile(ExtractFilePath(Application.ExeName)+'templates\ostatokOv.fr3');
+
+      if first_time_flag then begin first_time_flag:=false;  frxReport1.PrepareReport(true) end else
+          frxReport1.PrepareReport(false);
+    end;
+    DataSource1.DataSet.Next;
+  end;
 ProcessFrm.Close;
-
-
-
-frxReport1.Script.Variables['ddate']:=' cтаном на '+MainForm.ConvertDate(op_date,op_date,true);
-frxReport1.Script.Variables['punktname']:=DBGrid1.Columns[1].Field.Value;;
-frxReport1.Script.Variables['adres']:=DBGrid1.Columns[2].Field.Value;
-
-//frxReport1.Script.Variables['kasir']:=mainform.DataBase.getKassirNameByDay(kas,op_date);
-//frxReport1.Script.Variables['dirbuh']:='Бухгалтер';
-
-frxReport1.LoadFromFile(ExtractFilePath(Application.ExeName)+'templates\ostatokOv.fr3');
-frxReport1.ShowReport;
-
+frxReport1.ShowPreparedReport;
 end;
 
+procedure TfrmZvitnaOstatok.BitBtn3Click(Sender: TObject);
+begin
+DataSource1.DataSet.FindFirst;
+while not  DataSource1.DataSet.Eof do
+begin
+ DBGrid1.SelectedRows.CurrentRowSelected:=true;
+ DataSource1.DataSet.next;
+end;
+
+
+end;
 
 procedure TfrmZvitnaOstatok.FormClose(Sender: TObject;
   var Action: TCloseAction);

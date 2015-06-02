@@ -41,7 +41,7 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
     Width = 605
     Height = 318
     DataSource = DataSource1
-    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit, dgMultiSelect, dgTitleClick, dgTitleHotTrack]
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -71,12 +71,52 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
         Visible = True
       end>
   end
-  object BitBtn1: TBitBtn
-    Left = 256
+  object DateTimePicker2: TDateTimePicker
+    Left = 176
+    Top = 2
+    Width = 71
+    Height = 21
+    Date = 42154.390262870370000000
+    Time = 42154.390262870370000000
+    Kind = dtkTime
+    TabOrder = 2
+  end
+  object BitBtn2: TBitBtn
+    Left = 230
     Top = 351
-    Width = 114
+    Width = 201
     Height = 25
-    Caption = #1086#1090#1088#1080#1084#1072#1090#1080' '#1079#1074#1110#1090
+    Hint = #1065#1086#1073' '#1086#1073#1088#1072#1090#1080' '#1082#1072#1089#1091' - CTRL+CLICK'
+    Caption = #1047#1074#1110#1090' '#1087#1086' '#1086#1073#1088#1072#1085#1080#1084' '#1082#1072#1089#1072#1084
+    Glyph.Data = {
+      F2010000424DF201000000000000760000002800000024000000130000000100
+      0400000000007C01000000000000000000001000000000000000000000000000
+      80000080000000808000800000008000800080800000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333334433333
+      3333333333388F3333333333000033334224333333333333338338F333333333
+      0000333422224333333333333833338F33333333000033422222243333333333
+      83333338F3333333000034222A22224333333338F33F33338F33333300003222
+      A2A2224333333338F383F3338F33333300003A2A222A222433333338F8333F33
+      38F33333000034A22222A22243333338833333F3338F333300004222A2222A22
+      2433338F338F333F3338F3330000222A3A2224A22243338F3838F338F3338F33
+      0000A2A333A2224A2224338F83338F338F3338F300003A33333A2224A2224338
+      333338F338F3338F000033333333A2224A2243333333338F338F338F00003333
+      33333A2224A2233333333338F338F83300003333333333A2224A333333333333
+      8F338F33000033333333333A222433333333333338F338F30000333333333333
+      A224333333333333338F38F300003333333333333A223333333333333338F8F3
+      000033333333333333A3333333333333333383330000}
+    NumGlyphs = 2
+    ParentShowHint = False
+    ShowHint = True
+    TabOrder = 3
+    OnClick = BitBtn2Click
+  end
+  object BitBtn3: TBitBtn
+    Left = 328
+    Top = 1
+    Width = 157
+    Height = 25
+    Caption = #1054#1073#1088#1072#1090#1080' '#1074#1089#1110' '#1082#1072#1089#1080
     Default = True
     Glyph.Data = {
       DE010000424DDE01000000000000760000002800000024000000120000000100
@@ -96,18 +136,8 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
       333A333333333333333338330000333333333333333333333333333333333333
       0000}
     NumGlyphs = 2
-    TabOrder = 2
-    OnClick = BitBtn1Click
-  end
-  object DateTimePicker2: TDateTimePicker
-    Left = 176
-    Top = 2
-    Width = 71
-    Height = 21
-    Date = 42154.390262870370000000
-    Time = 42154.390262870370000000
-    Kind = dtkTime
-    TabOrder = 3
+    TabOrder = 4
+    OnClick = BitBtn3Click
   end
   object DataSource1: TDataSource
     Left = 136
@@ -122,7 +152,7 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 42154.472527835600000000
-    ReportOptions.LastChange = 42154.494609224540000000
+    ReportOptions.LastChange = 42157.669789502300000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       ''
@@ -150,6 +180,7 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
       RightMargin = 10.000000000000000000
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
+      PrintOnPreviousPage = True
       object ReportTitle1: TfrxReportTitle
         Height = 124.724490000000000000
         Top = 18.897650000000000000
@@ -194,7 +225,7 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
             #1055#1088#1086#1076#1072#1085#1086)
         end
         object Memo13: TfrxMemoView
-          Left = 430.866420000000000000
+          Left = 445.984540000000000000
           Top = 102.047310000000000000
           Width = 98.267780000000000000
           Height = 18.897650000000000000
@@ -204,7 +235,7 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
             #1054#1087#1077#1088#1072#1094#1110#1081)
         end
         object Memo14: TfrxMemoView
-          Left = 566.929499999999900000
+          Left = 566.929500000000000000
           Top = 102.047310000000000000
           Width = 139.842610000000000000
           Height = 18.897650000000000000
@@ -229,7 +260,7 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
           ParentFont = False
         end
         object Memo16: TfrxMemoView
-          Top = 56.218933300000010000
+          Top = 56.218933300000000000
           Width = 716.523297400000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -276,6 +307,20 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
           ShowHint = False
           Memo.UTF8W = (
             '[Adres]')
+        end
+        object Memo20: TfrxMemoView
+          Left = 1.000000000000000000
+          Top = 116.165430000000000000
+          Width = 714.331170000000000000
+          Height = 7.559060000000000000
+          ShowHint = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftBottom]
+          ParentFont = False
         end
       end
       object MasterData1: TfrxMasterData
@@ -356,18 +401,21 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
             '[frDB1."ostatok"]')
         end
       end
-      object PageFooter1: TfrxPageFooter
+      object Footer1: TfrxFooter
         Height = 22.677180000000000000
-        Top = 283.464750000000000000
+        Top = 245.669450000000000000
         Width = 718.110700000000000000
         object Memo1: TfrxMemoView
-          Left = 642.520100000000000000
-          Width = 75.590600000000000000
+          Width = 714.331170000000000000
           Height = 18.897650000000000000
           ShowHint = False
-          HAlign = haRight
-          Memo.UTF8W = (
-            '[Page#]')
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftTop]
+          ParentFont = False
         end
       end
     end
@@ -378,33 +426,5 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
     BCDToCurrency = False
     Left = 232
     Top = 112
-  end
-  object frxDBDataset2: TfrxDBDataset
-    UserName = 'frDB2'
-    CloseDataSource = False
-    BCDToCurrency = False
-    Left = 280
-    Top = 112
-  end
-  object frxDBDataset3: TfrxDBDataset
-    UserName = 'frDB3'
-    CloseDataSource = False
-    BCDToCurrency = False
-    Left = 328
-    Top = 112
-  end
-  object frxDBDataset4: TfrxDBDataset
-    UserName = 'frDB4'
-    CloseDataSource = False
-    BCDToCurrency = False
-    Left = 368
-    Top = 112
-  end
-  object frxDBDataset5: TfrxDBDataset
-    UserName = 'frDB5'
-    CloseDataSource = False
-    BCDToCurrency = False
-    Left = 232
-    Top = 160
   end
 end

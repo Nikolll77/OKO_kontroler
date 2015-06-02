@@ -2,8 +2,8 @@ object MainForm: TMainForm
   Left = 206
   Top = 126
   Caption = #1052#1086#1076#1091#1083#1100' '#1082#1086#1085#1090#1088#1086#1083#1077#1088' ('#1090#1077#1089#1090')'
-  ClientHeight = 416
-  ClientWidth = 654
+  ClientHeight = 411
+  ClientWidth = 681
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -20,8 +20,8 @@ object MainForm: TMainForm
   TextHeight = 13
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 397
-    Width = 654
+    Top = 392
+    Width = 681
     Height = 19
     Panels = <
       item
@@ -34,6 +34,8 @@ object MainForm: TMainForm
       item
         Width = 50
       end>
+    ExplicitTop = 397
+    ExplicitWidth = 654
   end
   object MainMenu1: TMainMenu
     Left = 448
