@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Data.DB, Vcl.Grids,
-  Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, frxClass, frxDBSet, Data.Win.ADODB;
+  Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, frxClass, frxDBSet, Data.Win.ADODB,
+  frxExportRTF, frxExportCSV, frxExportPDF;
 
 type
   TfrmZvitnaOstatok = class(TForm)
@@ -18,6 +19,9 @@ type
     DateTimePicker2: TDateTimePicker;
     BitBtn2: TBitBtn;
     BitBtn3: TBitBtn;
+    frxRTFExport1: TfrxRTFExport;
+    frxPDFExport1: TfrxPDFExport;
+    frxCSVExport1: TfrxCSVExport;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BitBtn2Click(Sender: TObject);

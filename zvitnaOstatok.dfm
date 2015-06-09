@@ -239,4 +239,52 @@ object frmZvitnaOstatok: TfrmZvitnaOstatok
     Left = 232
     Top = 112
   end
+  object frxRTFExport1: TfrxRTFExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    PictureType = gpPNG
+    Wysiwyg = True
+    Creator = 'FastReport'
+    SuppressPageHeadersFooters = False
+    HeaderFooterMode = hfText
+    AutoSize = False
+    Left = 256
+    Top = 200
+  end
+  object frxPDFExport1: TfrxPDFExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    PrintOptimized = False
+    Outline = False
+    Background = False
+    HTMLTags = True
+    Quality = 95
+    Author = 'FastReport'
+    Subject = 'FastReport PDF export'
+    ProtectionFlags = [ePrint, eModify, eCopy, eAnnot]
+    HideToolbar = False
+    HideMenubar = False
+    HideWindowUI = False
+    FitWindow = False
+    CenterWindow = False
+    PrintScaling = False
+    Left = 392
+    Top = 240
+  end
+  object frxCSVExport1: TfrxCSVExport
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    DataOnly = False
+    Separator = ';'
+    OEMCodepage = False
+    NoSysSymbols = True
+    ForcedQuotes = False
+    Left = 200
+    Top = 280
+  end
 end
