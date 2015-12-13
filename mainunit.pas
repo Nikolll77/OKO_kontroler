@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, MySqlOpkas,ModuleReports, Vcl.ComCtrls,
-  Data.DB, Data.Win.ADODB;
+  Data.DB, Data.Win.ADODB,formAdm;
 
 type
   TMode = (modeOV,modeALL);
@@ -31,6 +31,7 @@ type
     N8: TMenuItem;
     N9: TMenuItem;
     N10: TMenuItem;
+    N11: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure menu_db_connectClick(Sender: TObject);
     procedure menu_DB_disconnectClick(Sender: TObject);
@@ -41,6 +42,7 @@ type
     procedure N8Click(Sender: TObject);
     procedure N7Click(Sender: TObject);
     procedure N10Click(Sender: TObject);
+    procedure N11Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -100,6 +102,13 @@ procedure TMainForm.N10Click(Sender: TObject);
 begin
 Application.CreateForm(TfrmZvitnaOstatok, FrmZvitnaOstatok);
 frmZvitnaOstatok.show;
+end;
+
+procedure TMainForm.N11Click(Sender: TObject);
+begin
+  Application.CreateForm(TfrmAdm,frmAdm);
+  frmAdm.show;
+
 end;
 
 procedure TMainForm.N4Click(Sender: TObject);

@@ -453,7 +453,7 @@ begin
   result:=zapros;
 end;
 
-function TmySqlOpkas.getOVOpkasList():TADOQuery;
+{function TmySqlOpkas.getOVOpkasList():TADOQuery;
 var
   zapros:TADOQuery;
 begin
@@ -464,6 +464,22 @@ begin
    begin
        Connection:=MysqlConnection;
        SQL.add('select o.* from OPKASSI o join OPKAS_OV v on o.id=v.opkas_id');
+       open;
+   end;
+  result:=zapros;
+end;   }
+
+function TmySqlOpkas.getOVOpkasList():TADOQuery;
+var
+  zapros:TADOQuery;
+begin
+//select * from OPER where operdata>'2014.07.31'
+
+   Zapros:=TADOQuery.Create(nil);
+   with Zapros do
+   begin
+       Connection:=MysqlConnection;
+       SQL.add('select * from OPKASSI where obmenka=1');
        open;
    end;
   result:=zapros;

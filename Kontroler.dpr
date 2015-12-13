@@ -11,7 +11,9 @@ uses
   GetOpkasIdForm in 'GetOpkasIdForm.pas' {frmgetOpkasId},
   OpersByClientForm in 'OpersByClientForm.pas' {frmOpersByClient},
   GetClientIdForm in 'GetClientIdForm.pas' {frmGetClentId},
-  zvitnadovidka in 'zvitnadovidka.pas' {FormZvitnaDovidka};
+  zvitnadovidka in 'zvitnadovidka.pas' {FormZvitnaDovidka},
+  FrameFilterKassa in 'FrameFilterKassa.pas' {FramFilterKassa: TFrame},
+  formAdm in 'formAdm.pas' {frmAdm};
 
 {$R *.res}
 

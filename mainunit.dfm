@@ -34,8 +34,6 @@ object MainForm: TMainForm
       item
         Width = 50
       end>
-    ExplicitTop = 397
-    ExplicitWidth = 654
   end
   object MainMenu1: TMainMenu
     Left = 448
@@ -99,6 +97,10 @@ object MainForm: TMainForm
         Caption = #1055#1077#1088#1077#1083#1110#1082' '#1086#1087#1077#1088#1072#1094#1110#1081' '#1087#1086' '#1082#1083#1110#1077#1085#1090#1091
         OnClick = N8Click
       end
+    end
+    object N11: TMenuItem
+      Caption = #1053#1072#1083#1072#1096#1090#1091#1074#1072#1085#1085#1103' '#1082#1072#1089
+      OnClick = N11Click
     end
   end
   object ADOConnection1: TADOConnection
