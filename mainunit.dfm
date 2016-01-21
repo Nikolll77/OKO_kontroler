@@ -2,7 +2,7 @@ object MainForm: TMainForm
   Left = 206
   Top = 126
   Caption = #1052#1086#1076#1091#1083#1100' '#1082#1086#1085#1090#1088#1086#1083#1077#1088' ('#1090#1077#1089#1090')'
-  ClientHeight = 411
+  ClientHeight = 394
   ClientWidth = 681
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -20,7 +20,7 @@ object MainForm: TMainForm
   TextHeight = 13
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 392
+    Top = 375
     Width = 681
     Height = 19
     Panels = <
@@ -36,7 +36,7 @@ object MainForm: TMainForm
       end>
   end
   object MainMenu1: TMainMenu
-    Left = 448
+    Left = 472
     Top = 8
     object menu_DB: TMenuItem
       Caption = #1041#1072#1079#1072' '#1076#1072#1085#1080#1093
@@ -64,6 +64,10 @@ object MainForm: TMainForm
           Caption = #1054#1089#1090#1072#1090#1086#1082' '#1074' '#1082#1072#1089#1110
           OnClick = N10Click
         end
+      end
+      object N12: TMenuItem
+        Caption = #1079#1074#1110#1090' '#1076#1083#1103' 1'#1055#1041
+        OnClick = N12Click
       end
     end
     object N1: TMenuItem

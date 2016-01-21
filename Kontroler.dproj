@@ -88,8 +88,8 @@
             <Form>MainForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="zvitnaOstatok.pas">
-            <Form>frmZvitnaOstatok</Form>
+        <DCCReference Include="odinpb.pas">
+            <Form>frmOdinPB</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="ModuleReports.pas"/>

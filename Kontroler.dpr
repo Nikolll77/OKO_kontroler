@@ -3,7 +3,7 @@ program Kontroler;
 uses
   Vcl.Forms,
   mainunit in 'mainunit.pas' {MainForm},
-  zvitnaOstatok in 'zvitnaOstatok.pas' {frmZvitnaOstatok},
+  odinpb in 'odinpb.pas' {frmOdinPB},
   ModuleReports in 'ModuleReports.pas',
   ProcessForm in 'ProcessForm.pas' {ProcessFrm},
   LimitsCheck in 'LimitsCheck.pas' {frmLimitsCheck},

@@ -115,6 +115,7 @@ type
       function getOVReestr(opkass_id:integer;oper_date:TDateTime; oper:integer =0; groupval:boolean = false):TADOQuery;
       function getOVList(opkass_id:integer;oper_date:TDateTime):TADOQuery;
       function getOVOstatki(opkass_id:integer;oper_date:TDateTime):TADOQuery;
+      function getOVSumm(opkass_id:integer;oper_date1:TDateTime;oper_date2:TDateTime):TADOQuery;
       function getCurrencyList:TADOQuery;
 
       function getKassirNameByDay(opkass_id:integer;oper_date:TDateTime):string;
@@ -357,6 +358,29 @@ begin
        SQL.add('CALL ov_ostatki(:opkassid, :operdate)');
        Parameters.ParamByName('opkassid').Value:=opkass_id;
        Parameters.ParamByName('operdate').Value:=FormatDateTime('yyyy-mm-dd hh.mm.ss',oper_date);
+       open;
+   end;
+  result:=zapros;
+
+end;
+
+function TmySqlOpkas.getOVSumm(opkass_id:integer;oper_date1:TDateTime;oper_date2:TDateTime):TADOQuery;
+var
+  zapros:TADOQuery;
+begin
+
+   //try FreeAndNil(Zapros) except end;
+   Zapros:=TADOQuery.Create(nil);
+   with Zapros do
+   begin
+       Connection:=MysqlConnection;
+       SQL.Clear;
+       Parameters.Clear;
+
+       SQL.add('CALL ov_summ(:opkassid, :operdate1, :operdate2)');
+       Parameters.ParamByName('opkassid').Value:=opkass_id;
+       Parameters.ParamByName('operdate1').Value:=FormatDateTime('yyyy-mm-dd',oper_date1);
+       Parameters.ParamByName('operdate2').Value:=FormatDateTime('yyyy-mm-dd',oper_date2);
        open;
    end;
   result:=zapros;
