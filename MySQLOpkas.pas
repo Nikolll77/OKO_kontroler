@@ -116,6 +116,7 @@ type
       function getOVList(opkass_id:integer;oper_date:TDateTime):TADOQuery;
       function getOVOstatki(opkass_id:integer;oper_date:TDateTime):TADOQuery;
       function getOVSumm(opkass_id:integer;oper_date1:TDateTime;oper_date2:TDateTime):TADOQuery;
+      function getOVItogo(set_of_opkass_id:string;oper_date1:TDateTime;oper_date2:TDateTime):TADOQuery;
       function getCurrencyList:TADOQuery;
 
       function getKassirNameByDay(opkass_id:integer;oper_date:TDateTime):string;
@@ -384,7 +385,41 @@ begin
        open;
    end;
   result:=zapros;
+end;
 
+function TmySqlOpkas.getOVItogo(set_of_opkass_id:string;oper_date1:TDateTime;oper_date2:TDateTime):TADOQuery;
+var
+  zapros:TADOQuery;
+  doperday1,doperday2:string;
+begin
+
+   //try FreeAndNil(Zapros) except end;
+   Zapros:=TADOQuery.Create(nil);
+   with Zapros do
+   begin
+       Connection:=MysqlConnection;
+       SQL.Clear;
+       doperday1:='"'+FormatDateTime('yyyy-mm-dd',oper_date1)+'"';
+       doperday2:='"'+FormatDateTime('yyyy-mm-dd',oper_date2)+'"';
+
+       SQL.add('select abr,kod,');
+
+       SQL.add('IFNULL ((select sum(sum) from OPER o where o.opkas_id in ('+set_of_opkass_id+') and o.kassa=2 and date(o.operdata)>='+doperday1+' and date(o.operdata)<='+doperday2+' and o.oper=1 and o.currency=c.abr),0) +');
+       SQL.add('IF (c.kod=980, IFNULL ((select sum(sumuah) from OPER o where o.opkas_id in ('+set_of_opkass_id+') and o.kassa=2 and date(o.operdata)>='+doperday1+' and date(o.operdata)<='+doperday2+' and o.oper=2 ),0),0) as kup,');
+
+       SQL.add('IFNULL ((select count(oper) from OPER o where o.opkas_id in ('+set_of_opkass_id+') and o.kassa=2 and date(o.operdata)>='+doperday1+' and date(o.operdata)<='+doperday2+' and o.oper=1 and o.currency=c.abr),0) +');
+       SQL.add('IF (c.kod=980,IFNULL ((select count(oper) from OPER o where o.opkas_id in ('+set_of_opkass_id+') and o.kassa=2 and date(o.operdata)>='+doperday1+' and date(o.operdata)<='+doperday2+' and o.oper=2),0),0) as cnt_kup,');
+
+       SQL.add('IFNULL ((select sum(sum) from OPER o where o.opkas_id in ('+set_of_opkass_id+') and o.kassa=2 and date(o.operdata)>='+doperday1+' and date(o.operdata)<='+doperday2+' and o.oper=2 and o.currency=c.abr),0) +');
+       SQL.add('IF (c.kod=980, IFNULL ((select sum(sumuah) from OPER o where o.opkas_id in ('+set_of_opkass_id+') and o.kassa=2 and date(o.operdata)>='+doperday1+' and date(o.operdata)<='+doperday2+' and o.oper=1 ),0),0) as prod,');
+
+       SQL.add('IFNULL ((select count(oper) from OPER o where o.opkas_id in ('+set_of_opkass_id+') and o.kassa=2 and date(o.operdata)>='+doperday1+' and date(o.operdata)<='+doperday2+' and o.oper=2 and o.currency=c.abr),0) +');
+       SQL.add('IF (c.kod=980,IFNULL ((select count(oper) from OPER o where o.opkas_id in ('+set_of_opkass_id+') and o.kassa=2 and date(o.operdata)>='+doperday1+' and date(o.operdata)<='+doperday2+' and o.oper=1),0),0) as cnt_prod');
+
+       SQL.add('from CURRENCY c ORDER BY sort_field  ');
+       open;
+   end;
+  result:=zapros;
 end;
 
 function TmySqlOpkas.getOVList(opkass_id:integer;oper_date:TDateTime):TADOQuery;
