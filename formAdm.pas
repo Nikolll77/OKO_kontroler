@@ -26,6 +26,8 @@ type
     DBEdit3: TDBEdit;
     DBCheckBox1: TDBCheckBox;
     DataSource1: TDataSource;
+    Label1: TLabel;
+    DBCheckBox2: TDBCheckBox;
     procedure FramFilterKassa1BitBtn1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);

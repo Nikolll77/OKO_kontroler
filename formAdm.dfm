@@ -26,7 +26,6 @@ object frmAdm: TfrmAdm
     ButtonWidth = 39
     Caption = 'ToolBar1'
     TabOrder = 0
-    ExplicitWidth = 738
     object DBNavigator2: TDBNavigator
       Left = 0
       Top = 0
@@ -61,8 +60,6 @@ object frmAdm: TfrmAdm
     Caption = ' '#1060#1110#1083#1100#1090#1088' '
     TabOrder = 1
     Visible = False
-    ExplicitLeft = 168
-    ExplicitTop = 21
     inline FramFilterKassa1: TFramFilterKassa
       Left = 7
       Top = 18
@@ -84,8 +81,6 @@ object frmAdm: TfrmAdm
     Align = alClient
     Caption = ' '#1055#1077#1088#1077#1083#1110#1082' '#1086#1087#1077#1088#1072#1094#1110#1081#1085#1080#1093' '#1082#1072#1089'  '
     TabOrder = 2
-    ExplicitWidth = 152
-    ExplicitHeight = 408
     object DBGrid2: TDBGrid
       Left = 2
       Top = 15
@@ -129,8 +124,6 @@ object frmAdm: TfrmAdm
     Align = alRight
     Caption = ' '#1044#1072#1085#1110' '#1082#1072#1089#1080' '
     TabOrder = 3
-    ExplicitLeft = 384
-    ExplicitHeight = 408
     object DBText1: TDBText
       Left = 80
       Top = 32
@@ -167,6 +160,13 @@ object frmAdm: TfrmAdm
       Height = 13
       Caption = 'ADDRESS:'
     end
+    object Label1: TLabel
+      Left = 16
+      Top = 139
+      Width = 32
+      Height = 13
+      Caption = 'for1PB'
+    end
     object DBEdit2: TDBEdit
       Left = 80
       Top = 73
@@ -194,6 +194,18 @@ object frmAdm: TfrmAdm
       DataField = 'obmenka'
       DataSource = DataSource1
       TabOrder = 2
+      ValueChecked = '1'
+      ValueUnchecked = '0'
+    end
+    object DBCheckBox2: TDBCheckBox
+      Left = 126
+      Top = 138
+      Width = 161
+      Height = 17
+      Caption = '     (1-'#1090#1072#1082' / 0-'#1085#1110')'
+      DataField = 'for1pb'
+      DataSource = DataSource1
+      TabOrder = 3
       ValueChecked = '1'
       ValueUnchecked = '0'
     end
