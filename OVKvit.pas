@@ -138,6 +138,7 @@ begin
             ClientInfo.Info :=clnt.info + ' '+tmp;
         
       end else begin
+                  ClientInfo.docum :='Паспорт громадянина України';
                   ClientInfo.FIO :=Zapros['dopinfo'];
                   ClientInfo.Serie :='_____';
                   ClientInfo.Number :='__________';
