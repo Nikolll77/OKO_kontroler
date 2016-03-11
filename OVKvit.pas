@@ -140,8 +140,8 @@ begin
       end else begin
                   ClientInfo.docum :='Паспорт громадянина України';
                   ClientInfo.FIO :=Zapros['dopinfo'];
-                  ClientInfo.Serie :='_____';
-                  ClientInfo.Number :='__________';
+                  ClientInfo.Serie :='';
+                  ClientInfo.Number :='';
                   ClientInfo.Info :='';
                end;
       MakeKvit(optyp,KvitInfo,ClientInfo,opdate,optime,false);
