@@ -130,6 +130,10 @@
             <Form>frmAdm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="OVKvit.pas">
+            <Form>frmOvKvit</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

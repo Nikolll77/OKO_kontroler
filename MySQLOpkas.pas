@@ -89,6 +89,7 @@ type
       function insertClientRecord(buferClientRecord:TbuferClientRecord):integer;
 
       function getClientsList(fltr:string):TADOQuery;
+      function getClientByID(id:integer):TbuferClientRecord;
 
       function getClientsWithCountOpers(date_from,date_to:TDatetime;perevod_system:integer;opkas_id:integer):TADOQuery;
       function getUncnownOVClientsWithCountOpers(date_from,date_to:TDatetime;opkas_id:integer):TADOQuery;
@@ -183,6 +184,28 @@ Result:=zapros;
 end;
 
 
+function TmySqlOpkas.getClientByID(id:integer):TbuferClientRecord;
+var
+zapros:TADOQuery;
+begin
+
+//try FreeAndNil(Zapros) except end;
+Zapros:=TADOQuery.Create(nil);
+
+with zapros do
+begin
+    Connection:=MysqlConnection;
+    SQL.Clear;
+    SQL.Add('select * from CLIENTS ');
+    SQL.Add('where id= '+IntToStr(id));
+    open;
+end;
+
+
+
+ClientToBufer(zapros,Result);
+zapros.Free;
+end;
 
 function TmySqlOpkas.getClientsList(fltr:string):TADOQuery;
 //filter can use '% ... %' in LIKE construction
@@ -438,7 +461,7 @@ begin
        SQL.add('select * ');
        SQL.add('from OPER ');
        SQL.add('where (opkas_id=:opkassid) and (date(operdata)=:operdate) and (storno=false) ');
-       SQL.add('and (kassa=2) ');
+       SQL.add('and (kassa=2) order by operdata');
 
        Parameters.ParamByName('opkassid').Value:=opkass_id;
        Parameters.ParamByName('operdate').Value:=FormatDateTime('yyyy-mm-dd',oper_date);

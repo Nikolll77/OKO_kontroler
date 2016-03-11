@@ -13,7 +13,8 @@ uses
   GetClientIdForm in 'GetClientIdForm.pas' {frmGetClentId},
   zvitnadovidka in 'zvitnadovidka.pas' {FormZvitnaDovidka},
   FrameFilterKassa in 'FrameFilterKassa.pas' {FramFilterKassa: TFrame},
-  formAdm in 'formAdm.pas' {frmAdm};
+  formAdm in 'formAdm.pas' {frmAdm},
+  OVKvit in 'OVKvit.pas' {frmOvKvit};
 
 {$R *.res}
 
@@ -23,5 +24,6 @@ begin
   Application.CreateForm(TMainForm, MainForm);
   Application.CreateForm(TProcessFrm, ProcessFrm);
   Application.CreateForm(TfrmLimitsCheck, frmLimitsCheck);
+  Application.CreateForm(TfrmOvKvit, frmOvKvit);
   Application.Run;
 end.

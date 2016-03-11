@@ -5,19 +5,20 @@
     <Transaction>1899.12.30 00:00:00.000.813,C:\Users\Николай\Documents\GitHub\OKO_kontroler\OpersByClientForm.pas=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.396,C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.dfm=C:\Users\Николай\Documents\GitHub\OKO_kontroler\zapClientCountOper.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.553,C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.dfm=C:\Users\Николай\Documents\GitHub\OKO_kontroler\LimitsCheck.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.787,C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas=C:\Users\Николай\Documents\GitHub\OKO_kontroler\GetOpkasIdForm.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.396,C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas=C:\Users\Николай\Documents\GitHub\OKO_kontroler\zapClientCountOper.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.184,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\zvitnadovidka.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.396,C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas=C:\Users\Николай\Documents\GitHub\OKO_kontroler\zapClientCountOper.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.964,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.553,C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas=C:\Users\Николай\Documents\GitHub\OKO_kontroler\LimitsCheck.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.787,C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.dfm=C:\Users\Николай\Documents\GitHub\OKO_kontroler\GetOpkasIdForm.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.787,C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas=C:\Users\Николай\Documents\GitHub\OKO_kontroler\GetOpkasIdForm.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.740,C:\Users\Николай\Documents\GitHub\OKO_kontroler\GetClientIdForm.pas=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.255,C:\Users\Николай\Documents\GitHub\OKO_kontroler\zvitnaOstatok.dfm=C:\Users\Николай\Documents\GitHub\OKO_kontroler\zvitnadovidka.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.772,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\ProcessForm.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.740,C:\Users\Николай\Documents\GitHub\OKO_kontroler\GetClientIdForm.dfm=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.423,C:\Users\Николай\Documents\GitHub\OKO_kontroler\zvitnaOstatok.dfm=C:\Users\Николай\Documents\GitHub\OKO_kontroler\odinpb.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.255,C:\Users\Николай\Documents\GitHub\OKO_kontroler\zvitnaOstatok.dfm=C:\Users\Николай\Documents\GitHub\OKO_kontroler\zvitnadovidka.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.428,D:\work\OKO\Kontroler\Kontroler.dproj=C:\Users\Николай\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.164,D:\work\OKO\Kontroler\ModuleReports.pas=D:\work\OKO\Kontroler\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.740,C:\Users\Николай\Documents\GitHub\OKO_kontroler\GetClientIdForm.pas=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.787,C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.dfm=C:\Users\Николай\Documents\GitHub\OKO_kontroler\GetOpkasIdForm.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.601,D:\work\OKO\Kontroler\mainunit.pas=C:\Users\Николай\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.428,D:\work\OKO\Kontroler\Kontroler.dproj=C:\Users\Николай\Documents\RAD Studio\Projects\Project1.dproj</Transaction>
     <Transaction>1899.12.30 00:00:00.000.436,D:\work\OKO\Kontroler\zvitnadovidka.dfm=D:\work\OKO\Kontroler\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.705,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\formAdm.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.711,=C:\Users\Николай\Documents\RAD Studio\Projects\Unit1.pas</Transaction>
@@ -27,13 +28,15 @@
     <Transaction>1899.12.30 00:00:00.000.813,C:\Users\Николай\Documents\GitHub\OKO_kontroler\OpersByClientForm.dfm=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.dfm</Transaction>
     <Transaction>1899.12.30 00:00:00.000.423,C:\Users\Николай\Documents\GitHub\OKO_kontroler\zvitnaOstatok.pas=C:\Users\Николай\Documents\GitHub\OKO_kontroler\odinpb.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.967,=D:\work\OKO\Kontroler\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.911,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.964,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.606,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.078,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.379,=D:\work\OKO\Kontroler\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.823,=D:\work\OKO\Kontroler\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.665,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.911,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.234,=D:\work\OKO\Kontroler\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.823,=D:\work\OKO\Kontroler\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.379,=D:\work\OKO\Kontroler\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.665,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
+    <Transaction>2016.03.11 14:59:33.626,=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
+    <Transaction>2016.03.11 14:59:49.334,C:\Users\Николай\Documents\GitHub\OKO_kontroler\OVKvit.dfm=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.dfm</Transaction>
+    <Transaction>2016.03.11 14:59:49.334,C:\Users\Николай\Documents\GitHub\OKO_kontroler\OVKvit.pas=C:\Users\Николай\Documents\GitHub\OKO_kontroler\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>
