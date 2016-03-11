@@ -72,7 +72,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
       end>
   end
   object BitBtn1: TBitBtn
-    Left = 280
+    Left = 256
     Top = 351
     Width = 114
     Height = 25
@@ -99,6 +99,34 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
     TabOrder = 2
     OnClick = BitBtn1Click
   end
+  object BitBtn2: TBitBtn
+    Left = 416
+    Top = 351
+    Width = 185
+    Height = 25
+    Caption = #1086#1090#1088#1080#1084#1072#1090#1080' '#1079#1074#1110#1090' ('#1085#1086#1074#1072' '#1079#1074#1110#1090#1085#1072')'
+    Default = True
+    Glyph.Data = {
+      DE010000424DDE01000000000000760000002800000024000000120000000100
+      0400000000006801000000000000000000001000000000000000000000000000
+      80000080000000808000800000008000800080800000C0C0C000808080000000
+      FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+      3333333333333333333333330000333333333333333333333333F33333333333
+      00003333344333333333333333388F3333333333000033334224333333333333
+      338338F3333333330000333422224333333333333833338F3333333300003342
+      222224333333333383333338F3333333000034222A22224333333338F338F333
+      8F33333300003222A3A2224333333338F3838F338F33333300003A2A333A2224
+      33333338F83338F338F33333000033A33333A222433333338333338F338F3333
+      0000333333333A222433333333333338F338F33300003333333333A222433333
+      333333338F338F33000033333333333A222433333333333338F338F300003333
+      33333333A222433333333333338F338F00003333333333333A22433333333333
+      3338F38F000033333333333333A223333333333333338F830000333333333333
+      333A333333333333333338330000333333333333333333333333333333333333
+      0000}
+    NumGlyphs = 2
+    TabOrder = 3
+    OnClick = BitBtn1Click
+  end
   object DataSource1: TDataSource
     Left = 136
     Top = 104
@@ -112,7 +140,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 41215.733751759300000000
-    ReportOptions.LastChange = 42063.614077372700000000
+    ReportOptions.LastChange = 42440.727294224540000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -156,13 +184,13 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
       TopMargin = 10.000000000000000000
       BottomMargin = 10.000000000000000000
       object ReportTitle1: TfrxReportTitle
-        Height = 135.296859200000000000
+        Height = 305.588672100000000000
         Top = 18.897650000000000000
         Width = 718.110700000000000000
-        object Memo4: TfrxMemoView
+        object Memo5: TfrxMemoView
           Left = -1.020473100000000000
-          Top = 40.001598700000000000
-          Width = 717.468179900000000000
+          Top = 144.921351500000000000
+          Width = 716.523297400000000000
           Height = 18.897650000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
@@ -172,28 +200,12 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Font.Style = [fsBold]
           HAlign = haCenter
           Memo.UTF8W = (
-            #1047#1042#1030#1058#1053#1040' '#1044#1054#1042#1030#1044#1050#1040)
-          ParentFont = False
-        end
-        object Memo5: TfrxMemoView
-          Left = -1.020473100000000000
-          Top = 56.992161500000000000
-          Width = 716.523297400000000000
-          Height = 18.897650000000000000
-          ShowHint = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -13
-          Font.Name = 'Arial'
-          Font.Style = []
-          HAlign = haCenter
-          Memo.UTF8W = (
-            #1087#1088#1086' '#1082#1072#1089#1086#1074#1110' '#1086#1073#1086#1088#1086#1090#1080' '#1110' '#1079#1072#1083#1080#1096#1082#1080' '#1094#1110#1085#1085#1086#1089#1090#1077#1081)
+            #1047#1074#1110#1090#1085#1072' '#1076#1086#1074#1110#1076#1082#1072' '#1087#1088#1086' '#1082#1072#1089#1086#1074#1110' '#1086#1073#1086#1088#1086#1090#1080' '#1079#1072' '#1076#1077#1085#1100' '#1110' '#1079#1072#1083#1080#1096#1082#1080' '#1094#1110#1085#1085#1086#1089#1090#1077#1081)
           ParentFont = False
         end
         object Memo6: TfrxMemoView
           Left = 0.007962500000000000
-          Top = 75.982724300000000000
+          Top = 162.911914300000000000
           Width = 716.486744300000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -210,9 +222,9 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo8: TfrxMemoView
           Left = 5.971657400000000000
-          Top = 102.114095400000000000
+          Top = 189.043285400000000000
           Width = 81.524462100000000000
-          Height = 33.145968500000000000
+          Height = 116.295628500000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -223,16 +235,15 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            #1053#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103' '#1094#1110#1085#1085#1086#1089#1090#1077#1081
-            '('#1082#1086#1076' '#1074#1072#1083#1102#1090#1080')')
+            #1050#1086#1076' '#1074#1072#1083#1102#1090#1080)
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo9: TfrxMemoView
           Left = 87.475646400000000000
-          Top = 102.110300100000000000
-          Width = 71.508707600000000000
-          Height = 33.161968500000000000
+          Top = 189.039490100000000000
+          Width = 94.185887600000000000
+          Height = 116.311628500000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -243,15 +254,17 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            #1047#1072#1083#1080#1096#1086#1082' '#1085#1072' '#1087#1086#1095#1072#1090#1086#1082' '#1076#1085#1103)
+            
+              #1047#1072#1083#1080#1096#1086#1082' '#1075#1086#1090#1110#1074#1082#1080' '#1074' '#1082#1072#1089#1110' '#1074#1110#1076#1086#1082#1088#1077#1084#1083#1077#1085#1086#1075#1086' '#1087#1110#1076#1088#1086#1079#1076#1110#1083#1091', '#1087#1091#1085#1082#1090#1110' '#1086#1073#1084#1110#1085#1091' ' +
+              #1074#1072#1083#1102#1090#1080' '#1085#1072' '#1087#1086#1095#1072#1090#1086#1082' '#1076#1085#1103)
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo10: TfrxMemoView
-          Left = 158.986354000000000000
-          Top = 102.087323600000000000
-          Width = 156.057723200000000000
-          Height = 18.304378500000000000
+          Left = 181.663534000000000000
+          Top = 189.016513600000000000
+          Width = 99.364773200000000000
+          Height = 116.572158500000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -262,72 +275,17 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            #1055#1088#1080#1081#1085#1103#1090#1086' '#1094#1110#1085#1085#1086#1089#1090#1077#1081' '#1085#1072' '#1089#1091#1084#1091)
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo11: TfrxMemoView
-          Left = 158.984354000000000000
-          Top = 120.366930300000000000
-          Width = 73.158314900000000000
-          Height = 14.906519500000000000
-          ShowHint = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -11
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.100000000000000000
-          HAlign = haCenter
-          Memo.UTF8W = (
-            #1074#1110#1076' '#1079#1072#1074'.'#1082#1072#1089#1086#1102)
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo12: TfrxMemoView
-          Left = 232.081464200000000000
-          Top = 120.367930300000000000
-          Width = 83.082274100000000000
-          Height = 14.904519500000000000
-          ShowHint = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -11
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.100000000000000000
-          HAlign = haCenter
-          Memo.UTF8W = (
-            #1074#1110#1076' '#1110#1085#1082#1072#1089'.')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object Memo13: TfrxMemoView
-          Left = 315.003352400000000000
-          Top = 102.085890700000000000
-          Width = 152.995374400000000000
-          Height = 18.334653700000000000
-          ShowHint = False
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -11
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.100000000000000000
-          HAlign = haCenter
-          Memo.UTF8W = (
-            #1054#1073#1086#1088#1086#1090#1080' '#1079#1072' '#1076#1077#1085#1100)
+            
+              #1054#1090#1088#1080#1084#1072#1085#1086' '#1074#1110#1076#1086#1082#1088#1077#1084#1083#1077#1085#1080#1084' '#1087#1110#1076#1088#1086#1079#1076#1110#1083#1086#1084', '#1087#1091#1085#1082#1090#1086#1084' '#1086#1073#1084#1110#1085#1091' '#1074#1072#1083#1102#1090#1080' '#1072#1074#1072#1085#1089#1091 +
+              ' '#1075#1086#1090#1110#1074#1082#1086#1102' '#1087#1088#1086#1090#1103#1075#1086#1084' '#1088#1086#1073#1086#1095#1086#1075#1086' '#1076#1085#1103)
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo14: TfrxMemoView
-          Left = 315.003352400000000000
-          Top = 120.365930300000000000
+          Left = 280.987582400000000000
+          Top = 188.976377950000000000
           Width = 80.957532600000000000
-          Height = 14.906519500000000000
+          Height = 116.953829500000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -338,15 +296,17 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            #1089#1091#1084#1072' '#1087#1088#1080#1093#1086#1076#1091)
+            
+              #1050#1091#1087#1083#1077#1085#1086' '#1074#1110#1076#1086#1082#1088#1077#1084#1083#1077#1085#1080#1084' '#1087#1110#1076#1088#1086#1079#1076#1110#1083#1086#1084', '#1087#1091#1085#1082#1090#1086#1084' '#1086#1073#1084#1110#1085#1091' '#1074#1072#1083#1102#1090#1080' '#1110#1085#1086#1079#1077#1084#1085 +
+              #1086#1111' '#1074#1072#1083#1102#1090#1080)
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo15: TfrxMemoView
-          Left = 395.998680300000000000
-          Top = 120.429135000000000000
-          Width = 72.000046500000000000
-          Height = 14.857519500000000000
+          Left = 361.982910300000000000
+          Top = 188.976377950000000000
+          Width = 106.015816500000000000
+          Height = 116.904829500000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -357,13 +317,15 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            #1089#1091#1084#1072' '#1074#1080#1076#1072#1090#1082#1091)
+            
+              #1055#1088#1086#1076#1072#1085#1086' '#1074#1110#1076#1086#1082#1088#1077#1084#1083#1077#1085#1080#1084' '#1087#1110#1076#1088#1086#1079#1076#1110#1083#1086#1084', '#1087#1091#1085#1082#1090#1086#1084' '#1086#1073#1084#1110#1085#1091' '#1074#1072#1083#1102#1090#1080' '#1110#1085#1086#1079#1077#1084#1085 +
+              #1086#1111' '#1074#1072#1083#1102#1090#1080)
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo16: TfrxMemoView
           Left = 468.036522100000000000
-          Top = 102.085890700000000000
+          Top = 189.015080700000000000
           Width = 149.088072600000000000
           Height = 18.334653700000000000
           ShowHint = False
@@ -376,15 +338,15 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            #1055#1077#1088#1077#1076#1072#1085#1086' '#1094#1110#1085#1085#1086#1089#1090#1077#1081' '#1085#1072' '#1089#1091#1084#1091)
+            #1055#1077#1088#1077#1076#1072#1085#1086' '#1074#1072#1083#1102#1090#1080)
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo17: TfrxMemoView
           Left = 468.036522100000000000
-          Top = 120.340587700000000000
+          Top = 207.269777700000000000
           Width = 68.999902400000000000
-          Height = 14.955519500000000000
+          Height = 98.105179500000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -395,15 +357,15 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            #1079#1072#1074'. '#1082#1072#1089#1086#1102)
+            #1085#1072' '#1082#1110#1085#1077#1094#1100' '#1088#1086#1073#1086#1095#1086#1075#1086' '#1076#1085#1103)
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo18: TfrxMemoView
           Left = 536.995622400000000000
-          Top = 120.340587700000000000
+          Top = 207.269777700000000000
           Width = 80.113650100000000000
-          Height = 14.955519500000000000
+          Height = 98.105179500000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -414,15 +376,15 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            #1079#1076#1072#1085#1086' '#1085#1072' '#1110#1085#1082#1072#1089'.')
+            #1087#1088#1086#1090#1103#1075#1086#1084' '#1088#1086#1073#1086#1095#1086#1075#1086' '#1076#1085#1103)
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo19: TfrxMemoView
           Left = 617.057272500000000000
-          Top = 102.085890700000000000
+          Top = 189.015080700000000000
           Width = 89.461475100000000000
-          Height = 33.210968500000000000
+          Height = 116.360628500000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -433,36 +395,67 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            #1047#1072#1083#1080#1096#1086#1082' '#1085#1072' '#1082#1110#1085#1077#1094#1100' '#1076#1085#1103' '#1091' '#1089#1091#1084#1110)
+            
+              #1047#1072#1083#1080#1096#1086#1082' '#1075#1086#1090#1110#1074#1082#1080' '#1074' '#1082#1072#1089#1110' '#1074#1110#1076#1086#1082#1088#1077#1084#1083#1077#1085#1086#1075#1086' '#1087#1110#1076#1088#1086#1079#1076#1110#1083#1091', '#1087#1091#1085#1082#1090#1110' '#1086#1073#1084#1110#1085#1091' ' +
+              #1074#1072#1083#1102#1090#1080' '#1085#1072' '#1087#1086#1090#1086#1095#1085#1080#1081' '#1084#1086#1084#1077#1085#1090' '#1095#1072#1089#1091' / '#1082#1110#1085#1077#1094#1100' '#1088#1086#1073#1086#1095#1086#1075#1086' '#1076#1085#1103)
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo1: TfrxMemoView
           Left = 0.680315400000000000
-          Top = 0.773228200000000000
-          Width = 715.162666600000000000
-          Height = 18.897650000000000000
+          Top = 0.773228199999998000
+          Width = 416.579796600000000000
+          Height = 37.795300000000000000
           ShowHint = False
           Memo.UTF8W = (
             '[PunktName]')
         end
         object Memo3: TfrxMemoView
           Left = 0.680315400000000000
-          Top = 19.749619700000000000
-          Width = 715.465029000000000000
-          Height = 18.897650000000000000
+          Top = 38.647269700000000000
+          Width = 416.882159000000000000
+          Height = 60.472480000000000000
           ShowHint = False
           Memo.UTF8W = (
             '[Adres]')
         end
+        object Memo4: TfrxMemoView
+          Left = 434.645950000000000000
+          Width = 280.516716600000000000
+          Height = 86.929190000000000000
+          ShowHint = False
+          Memo.UTF8W = (
+            #1044#1086#1076#1072#1090#1086#1082' 6'
+            
+              #1076#1086' '#1030#1085#1089#1090#1088#1091#1082#1094#1110#1111' '#1087#1088#1086' '#1087#1086#1088#1103#1076#1086#1082' '#1086#1088#1075#1072#1085#1110#1079#1072#1094#1110#1111' '#1090#1072' '#1079#1076#1110#1081#1089#1085#1077#1085#1085#1103' '#1074#1072#1083#1102#1090#1085#1086'-'#1086#1073#1084#1110 +
+              #1085#1085#1080#1093' '#1086#1087#1077#1088#1072#1094#1110#1081' '#1085#1072' '#1090#1077#1088#1080#1090#1086#1088#1110#1111' '#1059#1082#1088#1072#1111#1085#1080
+            '('#1087#1091#1085#1082#1090' 8 '#1088#1086#1079#1076#1110#1083#1091' III)')
+        end
+        object Memo7: TfrxMemoView
+          Top = 101.488250000000000000
+          Width = 417.940427400000000000
+          Height = 30.236240000000000000
+          ShowHint = False
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Frame.Typ = [ftTop]
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '('#1085#1072#1081#1084#1077#1085#1091#1074#1072#1085#1085#1103' '#1090#1072' '#1084#1110#1089#1094#1077#1079#1085#1072#1093#1086#1076#1078#1077#1085#1085#1103' '#1092#1110#1085#1072#1085#1089#1086#1074#1086#1111' '#1091#1089#1090#1072#1085#1086#1074#1080' /'
+            #1111#1111' '#1074#1110#1076#1086#1082#1088#1077#1084#1083#1077#1085#1086#1075#1086' '#1087#1110#1076#1088#1086#1079#1076#1110#1083#1091', '#1087#1091#1085#1082#1090#1091' '#1086#1073#1084#1110#1085#1091' '#1110#1085#1086#1079#1077#1084#1085#1086#1111' '#1074#1072#1083#1102#1090#1080')')
+          ParentFont = False
+        end
       end
       object Footer1: TfrxFooter
         Height = 64.516577100000000000
-        Top = 253.228510000000000000
+        Top = 423.307360000000000000
         Width = 718.110700000000000000
         object Memo20: TfrxMemoView
-          Left = 14.022056300000000000
-          Top = 5.253546700000000000
+          Left = 150.085136300000000000
+          Top = 12.812606700000000000
           Width = 427.427047700000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -472,13 +465,13 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Font.Name = 'Arial'
           Font.Style = []
           Memo.UTF8W = (
-            #1050#1072#1089#1086#1074#1080#1081' '#1087#1088#1072#1094#1110#1074#1085#1080#1082' [kasir] __________')
+            #1050#1072#1089#1080#1088' [kasir] __________')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo21: TfrxMemoView
-          Left = 441.940442900000000000
-          Top = 5.253546699999990000
+          Left = 150.916632900000000000
+          Top = 43.048846700000000000
           Width = 275.456656600000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -492,27 +485,28 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           ParentFont = False
           VAlign = vaCenter
         end
-        object Memo7: TfrxMemoView
-          Left = 14.022056300000000000
-          Top = 40.000015500000000000
-          Width = 122.494567300000000000
-          Height = 18.897650000000000000
+        object Memo11: TfrxMemoView
+          Left = 491.338900000000000000
+          Top = 30.236240000000000000
+          Width = 130.053627300000000000
+          Height = 34.015770000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -13
           Font.Name = 'Arial'
           Font.Style = []
+          Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            #1052#1110#1089#1094#1077' '#1076#1083#1103' '#1096#1090#1072#1084#1087#1072)
+            #1052#1110#1089#1094#1077' '#1076#1083#1103' '#1074#1110#1076#1073#1080#1090#1082#1072' '#1096#1090#1072#1084#1087#1072)
           ParentFont = False
           VAlign = vaCenter
         end
       end
       object MasterData1: TfrxMasterData
         Height = 16.075536200000000000
-        Top = 215.433210000000000000
+        Top = 385.512060000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset5
         DataSetName = 'frDB5'
@@ -539,7 +533,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object frxDBDataset1inkas: TfrxMemoView
           Left = 87.437851100000000000
-          Width = 71.546502900000000000
+          Width = 94.223682900000000000
           Height = 16.045536200000000000
           ShowHint = False
           StretchMode = smActualHeight
@@ -555,13 +549,13 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB5."sumstart"]')
+            '[frDB5."inkas"]')
           ParentFont = False
           VAlign = vaCenter
         end
         object frxDBDataset1otzk: TfrxMemoView
-          Left = 158.984354000000000000
-          Width = 73.232519600000000000
+          Left = 181.661534000000000000
+          Width = 99.401574800000000000
           Height = 16.045536200000000000
           ShowHint = False
           StretchMode = smActualHeight
@@ -577,34 +571,12 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB5."otzk"]')
-          ParentFont = False
-          VAlign = vaCenter
-        end
-        object frxDBDataset1otink: TfrxMemoView
-          Left = 232.080464200000000000
-          Width = 83.036274100000000000
-          Height = 16.045536200000000000
-          ShowHint = False
-          StretchMode = smActualHeight
-          DataSetName = 'frxDBDataset1'
-          DisplayFormat.FormatStr = '%2.2f'
-          DisplayFormat.Kind = fkNumeric
-          Font.Charset = DEFAULT_CHARSET
-          Font.Color = clBlack
-          Font.Height = -11
-          Font.Name = 'Arial'
-          Font.Style = []
-          Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
-          Frame.Width = 0.100000000000000000
-          HAlign = haCenter
-          Memo.UTF8W = (
-            '[frDB5."otink"]')
+            '[<frDB5."otzk">+<frDB5."otink">]')
           ParentFont = False
           VAlign = vaCenter
         end
         object frxDBDataset1sumprih: TfrxMemoView
-          Left = 315.003352400000000000
+          Left = 280.987582400000000000
           Width = 81.033123200000000000
           Height = 16.045536200000000000
           ShowHint = False
@@ -626,8 +598,8 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           VAlign = vaCenter
         end
         object frxDBDataset1sumvidat: TfrxMemoView
-          Left = 395.998680300000000000
-          Width = 72.037841800000000000
+          Left = 361.982910300000000000
+          Width = 106.053611800000000000
           Height = 16.045536200000000000
           ShowHint = False
           StretchMode = smActualHeight
@@ -687,7 +659,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB5."kink"]')
+            '[<frDB5."kink">+<frDB5."kzk">]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -709,18 +681,18 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB5."sumend"]')
+            '[<frDB5."sumend">]')
           ParentFont = False
           VAlign = vaCenter
         end
       end
       object Header1: TfrxHeader
-        Height = 194.435762200000000000
-        Top = 340.157700000000000000
+        Height = 205.774352200000000000
+        Top = 510.236550000000000000
         Width = 718.110700000000000000
         object Memo23: TfrxMemoView
           Left = 0.529134200000000000
-          Top = 57.604771300000000000
+          Top = 68.943361300000400000
           Width = 712.970539200000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -739,7 +711,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo24: TfrxMemoView
           Left = 0.037795300000000000
-          Top = 83.099261100000200000
+          Top = 94.437851100000700000
           Width = 717.430384600000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -754,7 +726,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           ParentFont = False
         end
         object Memo25: TfrxMemoView
-          Top = 97.155961800000000000
+          Top = 108.494551800001000000
           Width = 717.508769600000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -770,7 +742,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo26: TfrxMemoView
           Left = -1.000000000000000000
-          Top = 112.527628500000000000
+          Top = 123.866218500001000000
           Width = 717.486744300000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -787,7 +759,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo28: TfrxMemoView
           Left = 1.020473100000000000
-          Top = 138.088271700000000000
+          Top = 149.426861700001000000
           Width = 44.409863400000000000
           Height = 56.346490500000000000
           ShowHint = False
@@ -806,7 +778,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo29: TfrxMemoView
           Left = 144.000019530000000000
-          Top = 138.088271700000000000
+          Top = 149.426861700001000000
           Width = 112.629921260000000000
           Height = 56.346490500000000000
           ShowHint = False
@@ -826,7 +798,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo30: TfrxMemoView
           Left = 256.251968500000000000
-          Top = 138.088271700000000000
+          Top = 149.426861700001000000
           Width = 87.633914800000000000
           Height = 56.347490500000000000
           ShowHint = False
@@ -844,7 +816,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo31: TfrxMemoView
           Left = 344.146664100000000000
-          Top = 138.088271700000000000
+          Top = 149.426861700001000000
           Width = 80.403989000000000000
           Height = 56.346490500000000000
           ShowHint = False
@@ -863,7 +835,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo32: TfrxMemoView
           Left = 424.612857800000000000
-          Top = 138.088271700000000000
+          Top = 149.426861700001000000
           Width = 86.475646400000000000
           Height = 56.346490500000000000
           ShowHint = False
@@ -881,7 +853,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo33: TfrxMemoView
           Left = 511.088504200000000000
-          Top = 138.088271700000000000
+          Top = 149.426861700001000000
           Width = 126.704617400000000000
           Height = 56.346490500000000000
           ShowHint = False
@@ -901,7 +873,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo34: TfrxMemoView
           Left = 637.967326300000000000
-          Top = 138.088271700000000000
+          Top = 149.426861700001000000
           Width = 74.494536300000000000
           Height = 56.346490500000000000
           ShowHint = False
@@ -919,7 +891,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo2: TfrxMemoView
           Left = 45.354360000000000000
-          Top = 137.952755910000000000
+          Top = 149.291345910001000000
           Width = 98.645688820000000000
           Height = 56.346490500000000000
           ShowHint = False
@@ -938,7 +910,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo46: TfrxMemoView
           Width = 717.997314100000000000
-          Height = 18.897650000000000000
+          Height = 30.236240000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -953,7 +925,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo50: TfrxMemoView
           Left = 0.529134200000000000
-          Top = 18.522847900000000000
+          Top = 29.861437900000100000
           Width = 720.529599200000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -974,17 +946,18 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
       end
       object MasterData2: TfrxMasterData
         Height = 15.578677200000000000
-        Top = 559.370440000000000000
+        Top = 740.787880000000000000
         Width = 718.110700000000000000
-        DataSet = frxDBDataset1
-        DataSetName = 'frDB1'
+        DataSet = frxDBDataset2
+        DataSetName = 'frDB2'
         RowCount = 0
+        Stretched = True
         object Memo35: TfrxMemoView
           Left = 1.020473100000000000
           Width = 44.522863400000000000
           Height = 15.578677200000000000
           ShowHint = False
-          StretchMode = smActualHeight
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset2'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -995,7 +968,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[Line]')
+            '[frDB2."num"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1004,7 +977,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 112.705584600000000000
           Height = 15.578677200000000000
           ShowHint = False
-          StretchMode = smActualHeight
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset2'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1015,7 +988,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB1."currency"]')
+            '[frDB2."name"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1024,7 +997,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 87.533914800000000000
           Height = 15.578677200000000000
           ShowHint = False
-          StretchMode = smActualHeight
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset2'
           DisplayFormat.FormatStr = '%2.2f'
           DisplayFormat.Kind = fkNumeric
@@ -1037,7 +1010,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB1."sum"]')
+            '[frDB2."summa"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1046,7 +1019,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 80.503989000000000000
           Height = 15.578677200000000000
           ShowHint = False
-          StretchMode = smActualHeight
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset2'
           DisplayFormat.FormatStr = '%2.6f'
           DisplayFormat.Kind = fkNumeric
@@ -1059,7 +1032,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB1."rate"]')
+            '[frDB2."kurs"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1068,7 +1041,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 86.475646400000000000
           Height = 15.578677200000000000
           ShowHint = False
-          StretchMode = smActualHeight
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset2'
           DisplayFormat.FormatStr = '%2.2f'
           DisplayFormat.Kind = fkNumeric
@@ -1081,7 +1054,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB1."sumUAH"]')
+            '[frDB2."summauah"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1090,7 +1063,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 126.703617400000000000
           Height = 15.578677200000000000
           ShowHint = False
-          StretchMode = smActualHeight
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset2'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1101,7 +1074,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB1."kvit"]')
+            '[frDB2."numkvit"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1110,7 +1083,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 74.494536300000000000
           Height = 15.578677200000000000
           ShowHint = False
-          StretchMode = smActualHeight
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset2'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1121,7 +1094,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB1."storno"]')
+            '[frDB2."storno"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1130,10 +1103,8 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 99.023622050000000000
           Height = 15.578677200000000000
           ShowHint = False
-          StretchMode = smActualHeight
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset2'
-          DisplayFormat.FormatStr = 'hh:mm'
-          DisplayFormat.Kind = fkDateTime
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -11
@@ -1143,14 +1114,14 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB1."op_time"]')
+            '[frDB2."op_time"]')
           ParentFont = False
           VAlign = vaCenter
         end
       end
       object Footer2: TfrxFooter
         Height = 118.904180000000000000
-        Top = 597.165740000000000000
+        Top = 778.583180000000000000
         Width = 718.110700000000000000
         object Memo42: TfrxMemoView
           Left = 16.970089700000000000
@@ -1220,7 +1191,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[SUM(<frDB1."sum">,MasterData2)]')
+            '[SUM(<frDB2."summa">,MasterData2)]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1240,7 +1211,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[SUM(<frDB1."sumuah">,MasterData2)]')
+            '[SUM(<frDB2."summauah">,MasterData2)]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1262,12 +1233,12 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
       end
       object Header2: TfrxHeader
-        Height = 172.314347200000000000
-        Top = 774.803650000000000000
+        Height = 183.685066230000000000
+        Top = 956.221090000000000000
         Width = 718.110700000000000000
         object Memo47: TfrxMemoView
           Left = 0.037795300000000000
-          Top = 73.650436100000000000
+          Top = 84.989026100000100000
           Width = 717.430384600000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -1282,7 +1253,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           ParentFont = False
         end
         object Memo48: TfrxMemoView
-          Top = 87.707136799999900000
+          Top = 99.045726800000000000
           Width = 718.026107300000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -1298,7 +1269,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo49: TfrxMemoView
           Left = 0.000108500000000000
-          Top = 103.625259900000000000
+          Top = 114.963849900000000000
           Width = 717.486744300000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -1315,7 +1286,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo51: TfrxMemoView
           Left = 1.020473100000000000
-          Top = 128.639446700000000000
+          Top = 139.978036700000000000
           Width = 44.522863400000000000
           Height = 43.674900500000000000
           ShowHint = False
@@ -1334,7 +1305,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo52: TfrxMemoView
           Left = 120.938658200000000000
-          Top = 128.639446700000000000
+          Top = 139.978036700000000000
           Width = 86.173228346456700000
           Height = 43.674900500000000000
           ShowHint = False
@@ -1353,7 +1324,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo53: TfrxMemoView
           Left = 207.376493800000000000
-          Top = 128.639446700000000000
+          Top = 139.978036700000000000
           Width = 70.105931500000000000
           Height = 43.673900500000000000
           ShowHint = False
@@ -1372,7 +1343,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo54: TfrxMemoView
           Left = 277.685024720000000000
-          Top = 128.639446700000000000
+          Top = 139.978036700000000000
           Width = 118.677180000000000000
           Height = 43.673900500000000000
           ShowHint = False
@@ -1392,7 +1363,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo55: TfrxMemoView
           Left = 396.175807600000000000
-          Top = 128.639446700000000000
+          Top = 139.978036700000000000
           Width = 65.654985300000000000
           Height = 43.673900500000000000
           ShowHint = False
@@ -1411,7 +1382,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo56: TfrxMemoView
           Left = 461.963266000000000000
-          Top = 128.639446700000000000
+          Top = 139.978036700000000000
           Width = 78.120499200000000000
           Height = 43.673900500000000000
           ShowHint = False
@@ -1430,7 +1401,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo57: TfrxMemoView
           Left = 637.967326300000000000
-          Top = 128.639446700000000000
+          Top = 139.978036700000000000
           Width = 74.494536300000000000
           Height = 43.673900500000000000
           ShowHint = False
@@ -1448,7 +1419,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo68: TfrxMemoView
           Left = 539.938921700000000000
-          Top = 128.639446700000000000
+          Top = 139.978036700000000000
           Width = 97.889212900000000000
           Height = 43.674900500000000000
           ShowHint = False
@@ -1468,7 +1439,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         object Memo27: TfrxMemoView
           Left = 0.982677800000000000
           Width = 716.485502100000000000
-          Height = 18.897650000000000000
+          Height = 30.236240000000000000
           ShowHint = False
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1483,7 +1454,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo66: TfrxMemoView
           Left = 45.354360000000000000
-          Top = 128.503956540000000000
+          Top = 139.842546540000000000
           Width = 75.590551181102400000
           Height = 43.842519690000000000
           ShowHint = False
@@ -1501,7 +1472,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           ParentFont = False
         end
         object Memo45: TfrxMemoView
-          Top = 18.897650000000000000
+          Top = 30.236240000000000000
           Width = 720.529599200000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -1520,7 +1491,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           ParentFont = False
         end
         object Memo70: TfrxMemoView
-          Top = 52.913420000000000000
+          Top = 64.252010000000000000
           Width = 712.970539200000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -1540,16 +1511,18 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
       end
       object MasterData3: TfrxMasterData
         Height = 16.077016100000000000
-        Top = 971.339210000000000000
+        Top = 1164.095240000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset3
         DataSetName = 'frDB3'
         RowCount = 0
+        Stretched = True
         object Memo69: TfrxMemoView
           Left = 539.938921700000000000
           Width = 98.003212900000000000
           Height = 16.077016100000000000
           ShowHint = False
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset3'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1560,7 +1533,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB3."notate"]')
+            '[frDB3."numdov"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1569,6 +1542,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 86.173228350000000000
           Height = 16.077016100000000000
           ShowHint = False
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset3'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1579,7 +1553,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB3."kvit"]')
+            '[frDB3."numkvit"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1588,6 +1562,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 44.522863400000000000
           Height = 16.077016100000000000
           ShowHint = False
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset3'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1598,7 +1573,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[Line]')
+            '[frDB3."num"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1607,6 +1582,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 69.921259840000000000
           Height = 16.077016100000000000
           ShowHint = False
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset3'
           DisplayFormat.FormatStr = '%2.2f'
           DisplayFormat.Kind = fkNumeric
@@ -1619,7 +1595,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB3."sumUAH"]')
+            '[frDB3."summauah"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1628,6 +1604,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 118.677165350000000000
           Height = 16.077016100000000000
           ShowHint = False
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset3'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1637,7 +1614,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Typ = [ftLeft, ftRight, ftTop, ftBottom]
           Frame.Width = 0.100000000000000000
           Memo.UTF8W = (
-            '[frDB3."currency"]')
+            '[frDB3."name"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1646,6 +1623,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 65.852985300000000000
           Height = 16.077016100000000000
           ShowHint = False
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset3'
           DisplayFormat.FormatStr = '%2.2f'
           DisplayFormat.Kind = fkNumeric
@@ -1658,7 +1636,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB3."sum"]')
+            '[frDB3."summa"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1667,6 +1645,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 78.121499200000000000
           Height = 16.077016100000000000
           ShowHint = False
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset3'
           DisplayFormat.FormatStr = '%2.6f'
           DisplayFormat.Kind = fkNumeric
@@ -1679,7 +1658,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB3."rate"]')
+            '[frDB3."kurs"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1688,6 +1667,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 74.494536300000000000
           Height = 16.077016100000000000
           ShowHint = False
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset3'
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
@@ -1707,9 +1687,8 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Width = 75.968489290000000000
           Height = 16.251968500000000000
           ShowHint = False
+          StretchMode = smMaxHeight
           DataSetName = 'frxDBDataset2'
-          DisplayFormat.FormatStr = 'hh:mm'
-          DisplayFormat.Kind = fkDateTime
           Font.Charset = DEFAULT_CHARSET
           Font.Color = clBlack
           Font.Height = -11
@@ -1726,11 +1705,11 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
       end
       object Footer3: TfrxFooter
         Height = 95.431919600000000000
-        Top = 1009.134510000000000000
+        Top = 1201.890540000000000000
         Width = 718.110700000000000000
         object Memo65: TfrxMemoView
           Left = 16.970089700000000000
-          Top = 7.102350000000000000
+          Top = 7.102349999999890000
           Width = 224.466286700000000000
           Height = 18.897650000000000000
           ShowHint = False
@@ -1747,7 +1726,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           VAlign = vaCenter
         end
         object Memo92: TfrxMemoView
-          Top = 71.487919599999800000
+          Top = 71.487919599999700000
           Width = 54.706000000000000000
           Height = 12.470000000000000000
           ShowHint = False
@@ -1776,7 +1755,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[SUM(<frDB3."sum">,MasterData3)]')
+            '[SUM(<frDB3."summauah">,MasterData3)]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1794,13 +1773,13 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[SUM(<frDB3."sumuah">,MasterData3)]')
+            '[SUM(<frDB3."summa">,MasterData3)]')
           ParentFont = False
           VAlign = vaCenter
         end
         object Memo97: TfrxMemoView
           Left = 0.001000000000000000
-          Top = 84.136919599999710000
+          Top = 84.136919599999600000
           Width = 54.706000000000000000
           Height = 11.295000000000000000
           ShowHint = False
@@ -1816,7 +1795,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
         end
         object Memo22: TfrxMemoView
           Left = 15.118120000000000000
-          Top = 33.559059999999900000
+          Top = 33.559059999999800000
           Width = 130.053627300000000000
           Height = 34.015770000000000000
           ShowHint = False
@@ -1835,10 +1814,10 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
       end
       object MasterData5: TfrxMasterData
         Height = 11.960016100000000000
-        Top = 740.787880000000000000
+        Top = 922.205320000000000000
         Width = 718.110700000000000000
-        DataSet = frxDBDataset2
-        DataSetName = 'frDB2'
+        DataSet = frxDBDataset4
+        DataSetName = 'frDB4'
         RowCount = 0
         object Memo98: TfrxMemoView
           Left = 57.058000000000000000
@@ -1854,7 +1833,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB2."val"]')
+            '[frDB4."val"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1874,7 +1853,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB2."summ"]')
+            '[frDB4."kup"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1894,14 +1873,14 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB2."summU"]')
+            '[frDB4."kupU"]')
           ParentFont = False
           VAlign = vaCenter
         end
       end
       object MasterData6: TfrxMasterData
         Height = 11.372016100000000000
-        Top = 1126.299940000000000000
+        Top = 1319.055970000000000000
         Width = 718.110700000000000000
         DataSet = frxDBDataset4
         DataSetName = 'frDB4'
@@ -1940,7 +1919,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB4."summ"]')
+            '[frDB4."prod"]')
           ParentFont = False
           VAlign = vaCenter
         end
@@ -1960,7 +1939,7 @@ object FormZvitnaDovidka: TFormZvitnaDovidka
           Frame.Width = 0.100000000000000000
           HAlign = haCenter
           Memo.UTF8W = (
-            '[frDB4."summU"]')
+            '[frDB4."prodU"]')
           ParentFont = False
           VAlign = vaCenter
         end

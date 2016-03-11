@@ -20,6 +20,7 @@ type
     frxDBDataset4: TfrxDBDataset;
     Label1: TLabel;
     frxDBDataset5: TfrxDBDataset;
+    BitBtn2: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -71,7 +72,12 @@ frxReport1.Script.Variables['kasir']:=mainform.DataBase.getKassirNameByDay(kas,o
 frxReport1.Script.Variables['dirbuh']:='Бухгалтер';
 
 
+
 frxReport1.LoadFromFile(ExtractFilePath(Application.ExeName)+'templates\zvitna.fr3');
+
+if (Sender as TBitBtn).name='BitBtn2' then
+frxReport1.LoadFromFile(ExtractFilePath(Application.ExeName)+'templates\zvitna1601.fr3');
+
 frxReport1.ShowReport;
 
 end;

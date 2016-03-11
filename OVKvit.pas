@@ -128,6 +128,7 @@ begin
             ClientInfo.Adress :=clnt.adres;
             ClientInfo.Serie :=clnt.ser;
             ClientInfo.Number :=clnt.num;
+            ClientInfo.docum :=clnt.dType;
             try
                tmp:= datetostr(ClientInfo.begdate);
                if tmp='30.12.1899' then tmp:=''
