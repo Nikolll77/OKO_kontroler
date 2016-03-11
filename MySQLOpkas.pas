@@ -510,6 +510,7 @@ begin
        begin
            SQL.add('and (storno=0) group by currency, oper');
        end;
+              SQL.add('order by operdata');
        SQL.EndUpdate;
 
        Parameters.ParamByName('opkassid').Value:=opkass_id;
