@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, frxClass,
-  frxDBSet, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.ComCtrls,MySQLOpkas;
+  frxDBSet, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.ComCtrls,MySQLOpkas,
+  frxExportPDF, frxExportImage, frxExportRTF, frxExportText, frxExportCSV;
 type tKvit = record
       val           : string;
       val2          : string;
@@ -41,6 +42,11 @@ type
     DataSource2: TDataSource;
     DBGrid2: TDBGrid;
     BitBtn2: TBitBtn;
+    frxRTFExport1: TfrxRTFExport;
+    frxGIFExport1: TfrxGIFExport;
+    frxPDFExport1: TfrxPDFExport;
+    frxCSVExport1: TfrxCSVExport;
+    frxSimpleTextExport1: TfrxSimpleTextExport;
     procedure FormCreate(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
